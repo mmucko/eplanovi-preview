@@ -70,7 +70,7 @@ map.on('contextmenu', function(e){
 });
 // JAKA legenda
 var lg=L.control({position:'topright'});lg.onAdd=function(){var d=L.DomUtil.create('div','panel');
- d.innerHTML='<h3>1b — Gospodarska zona sjeverno od pruge</h3><div class=desc>Zavod: zona I/I1/I2/K je u važećem PPUG-u i GUP-u <b>izdvojeno GP izvan naselja</b>, a u Konačnom prijedlogu je prikazana kao dio GP naselja. Crvena granica = stari layer '00-IZDVOJENO GP' (64.7 ha; unutra: I1 48.2 + K1 14.5 + K2 1.7 ha).</div>'+
+ d.innerHTML='<h3>1b — Gospodarska zona sjeverno od pruge</h3><div class=desc>Zavod: zona I/I1/I2/K je u važećem PPUG-u i GUP-u <b>izdvojeno GP izvan naselja</b>, a u Konačnom prijedlogu je prikazana kao dio GP naselja. Crvena granica = stari layer &#39;00-IZDVOJENO GP&#39; (64.7 ha; unutra: I1 48.2 + K1 14.5 + K2 1.7 ha).</div>'+
    '<div class=cats><div style="margin:2px 0"><span style="display:inline-block;width:13px;height:13px;background:#e3170a;border:1px solid #444;margin-right:6px;vertical-align:middle"></span><b>Izdvojeno GP (važeći plan)</b> — 64.7 ha</div><div style="margin:2px 0"><span style="display:inline-block;width:13px;height:13px;background:#8a2be2;border:1px solid #444;margin-right:6px;vertical-align:middle"></span><b>I1 proizvodna (naša)</b> — 49.2 ha</div><div style="margin:2px 0"><span style="display:inline-block;width:13px;height:13px;background:#ff8c00;border:1px solid #444;margin-right:6px;vertical-align:middle"></span><b>K1/K2 poslovna (naša)</b> — 34.2 ha</div></div>'+
    '<div class=hint>Gore-lijevo: pali/gasi kategorije.<br>Klik na plohu = detalji + editor.<br>DESNI klik bilo gdje = koordinate (3765) + editor.</div>';
  L.DomEvent.disableClickPropagation(d);return d;};lg.addTo(map);

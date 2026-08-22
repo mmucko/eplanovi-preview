@@ -70,7 +70,7 @@ map.on('contextmenu', function(e){
 });
 // JAKA legenda
 var lg=L.control({position:'topright'});lg.onAdd=function(){var d=L.DomUtil.create('div','panel');
- d.innerHTML='<h3>2b — Poljoprivredno tlo → GP naselja (južno od pruge)</h3><div class=desc>Zavod: površina 'ostalo poljoprivredno tlo' izvan GP-a pretvorena je u GP naselja. Mjerenje: <b>9.6 ha</b> starog poljoprivrednog je sad u GP; na tome je naš Z1 pojas (9.2 ha).</div>'+
+ d.innerHTML='<h3>2b — Poljoprivredno tlo → GP naselja (južno od pruge)</h3><div class=desc>Zavod: površina &#39;ostalo poljoprivredno tlo&#39; izvan GP-a pretvorena je u GP naselja. Mjerenje: <b>9.6 ha</b> starog poljoprivrednog je sad u GP; na tome je naš Z1 pojas (9.2 ha).</div>'+
    '<div class=cats><div style="margin:2px 0"><span style="display:inline-block;width:13px;height:13px;background:#e3170a;border:1px solid #444;margin-right:6px;vertical-align:middle"></span><b>Staro poljoprivredno sad u GP</b> — 9.6 ha</div><div style="margin:2px 0"><span style="display:inline-block;width:13px;height:13px;background:#00bfff;border:1px solid #444;margin-right:6px;vertical-align:middle"></span><b>Z1 javna zelena (naša)</b> — 18.5 ha</div></div>'+
    '<div class=hint>Gore-lijevo: pali/gasi kategorije.<br>Klik na plohu = detalji + editor.<br>DESNI klik bilo gdje = koordinate (3765) + editor.</div>';
  L.DomEvent.disableClickPropagation(d);return d;};lg.addTo(map);
