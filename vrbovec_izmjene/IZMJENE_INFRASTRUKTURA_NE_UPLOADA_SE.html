@@ -38,27 +38,34 @@
  td.r{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
  .note{background:#fff8e1;border-left:4px solid #f0b429;padding:10px 14px;margin:12px 0;border-radius:0 5px 5px 0}
  .foot{margin-top:40px;padding-top:14px;border-top:1px solid #dfe4ea;color:#667;font-size:12.5px}
+
+ .megabanner{background:#fef3c7;border:3px solid #d97706;border-radius:8px;margin:18px 0 24px;
+   padding:16px 20px;font-size:15px;line-height:1.5;color:#78350f;font-weight:600;text-align:center}
+ .megabanner b{color:#92400e}
+ .editorbtn{display:inline-block;margin:12px 0 4px;background:#15803d;color:#fff!important;
+   text-decoration:none;padding:10px 18px;border-radius:6px;font-weight:700;font-size:14.5px;
+   box-shadow:0 1px 4px rgba(0,0,0,.2)}
+ .editorbtn:hover{background:#0f5c2c}
 </style></head><body>
 
-<header><h1>Vrbovec IV. ID PPUG (plan 83) — arhiva infrastrukturnih izmjena <span class="p">· ne uploada se</span></h1>
-<p>Ove izmjene postoje u kandidat GPKG-u, ali se <b>NE uploadaju</b> — uploadaju se samo karte 1.1
-(<code>KN_1_1</code>), 2.1 (<code>KN_2_1</code>) i 1.3 (<code>KN_3_*</code>). Infrastrukturne karte (2.x)
-uređuju se direktno u <b>ePlanovi editoru</b>; vrijednosti u karticama služe kao <b>checklista za
-prepisivanje</b>.</p>
-<div class="hgrid">
- <div class="hcard"><b>Glavna datoteka</b><code>VRBOVEC_IZMJENE_PO_STAVKAMA.html</code><br>13 stavki koje se uploadaju</div>
- <div class="hcard"><b>Ova arhiva</b>8 infrastrukturnih stavki<br>karte 2.x, IS_* slojevi</div>
-</div>
+<header><h1>Vrbovec IV. ID PPUG — infrastrukturne karte <span class="p">· uređuju se u editoru</span></h1>
+<p>Popis izmjena infrastrukturnih karata (2.x) koje se rade izravno u ePlanovi editoru — s gotovim
+vrijednostima za prepisivanje. Primjedbe Zavoda za prostorno uređenje Zagrebačke županije: KLASA
+350-02/25-02/2, URBROJ 238/1-126-26-8, 14.08.2026. · pregled izrađen 03.09.2026.</p>
 <a class="platbtn" href="editor.html" target="_blank">↗ Otvori plan u ePlanovi editoru</a>
 </header>
 
 <main>
 
-<div class="status"><b>Napomena o relinku (nakon prepisivanja u editoru):</b>
-<code>IS_1_1</code> fid <b>51</b> (id <code>Vde9NCSOiDn4qUj601l1xz</code>) i fid <b>52</b>
-(id <code>3tr5UTPOUwKcGCQoDAx69a</code>) trebaju vezu na članak Odredbi — v. <a href="#s05">stavku 5</a>.
-<code>IS_2_2</code> fid 2 treba provjeru da veza na odredbe i dalje opisuje isti uređaj nakon
-premještanja — v. <a href="#s08">stavku 8</a>.</div>
+<div class="megabanner">🔗 SVAKU IZMJENU MOŽETE ODMAH PREGLEDATI NA PLATFORMI — KLIKNITE
+&bdquo;POGLEDAJ U EDITORU&ldquo; KOD STAVKE, OTVARA SE TOČNO TO MJESTO U ePLANOVI EDITORU.<br>
+<span style="font-weight:400;font-size:13.5px">Desni klik na bilo koju kartu također daje link na editor.</span></div>
+
+
+<div class="status"><b>Napomena o povezivanju s Odredbama (radi se u editoru):</b>
+Nova os i koridor planirane državne ceste Vrbovec–Ivanić-Grad još nemaju vezu na članak Odredbi —
+v. <a href="#s05">stavku 5</a>. Elektronička komunikacijska oprema treba provjeru da veza na odredbe
+i dalje opisuje isti uređaj nakon premještanja — v. <a href="#s08">stavku 8</a>.</div>
 
 <h2>Sažetak — svih 8 arhivskih stavki</h2>
 <table>
@@ -92,16 +99,17 @@ premještanja — v. <a href="#s08">stavku 8</a>.</div>
  <td><a href="#s08">↓ 8</a></td></tr>
 
 </table>
-<p style="font-size:13px;color:#556">Brojke su izračunate izravno iz istog GPKG-a kao glavna datoteka; v. <code>VRBOVEC_IZMJENE_PO_STAVKAMA.html</code> za metodologiju i izvore. Geometrija na kartama pojednostavljena je radi prikaza.</p>
+<p style="font-size:13px;color:#556">Sve površine i duljine izračunate su izravno iz podataka plana. Geometrija na kartama je pojednostavljena samo radi prikaza.</p>
 
 <!-- ============================================================ 1 -->
-<div class="card" id="s01"><h2>Stavka 1 — planirani čvor „Rakovečica” <span class="p">· primjedba 2.1.1.a · blok 1</span></h2><div class="body">
+<div class="card" id="s01"><h2>Stavka 1 — planirani čvor „Rakovečica” <span class="p">primjedba 2.1.1.a</span></h2><div class="body">
 <p class="quote">„Također je u atributnoj tablici za dodano planirano raskrižje s državnom cestom DC 10
 potrebno korigirati vlastitu oznaku „planirani čvor u istraživanju” i dodatni naziv „Rakovečica”. Kao i
 za autocestovnu obilaznicu, nadležno javnopravno tijelo za čvor su Hrvatske autoceste.”
 <small>Zavod za prostorno uređenje Zagrebačke županije, 14.08.2026. — dio primjedbe 2.1.1.a</small></p>
 
-<h3>Što to znači običnim jezikom</h3>
+
+<a class="editorbtn" href="editor.html?c=490258%2C5080990&z=16" target="_blank">🔍 POGLEDAJ U EDITORU</a><br><h3>Što to znači običnim jezikom</h3>
 <p>Na mjestu gdje planirana autocestovna obilaznica presijeca državnu cestu DC 10 planiran je čvor. U
 planu je postojao kao geometrija, ali <b>bez imena i s krivim upravljačem</b> — upisane su bile Hrvatske
 ceste. Kako je obilaznica <b>autocesta</b>, nadležne su <b>Hrvatske autoceste</b>. Zavod je usput dao i
@@ -110,12 +118,12 @@ nije konačna). Sve tri promjene su čisto administrativne: čvor ostaje gdje je
 
 <h3>Što je napravljeno (s brojkama)</h3>
 <ul>
-<li><code>IS_1_1</code> fid 41, kod <code>IS-1-1-2116</code>, ploha <b>8.502,08 m²</b> — geometrija <b>nedirana</b>.</li>
+<li><code>IS_1_1</code> kod <code>IS-1-1-2116</code>, ploha <b>8.502,08 m²</b> — geometrija nepromijenjena.</li>
 <li><code>vlastita_oznaka_naziv</code>: prazno → <b>„planirani čvor u istraživanju”</b>.</li>
 <li><code>dodatni_naziv_teme</code>: prazno → <b>„Rakovečica”</b>.</li>
 <li>JPT: Hrvatske ceste d.o.o. <code>CES01016</code> → <b>Hrvatske autoceste d.o.o. <code>HAC00019</code></b>
  (OIB 57500462912; promijenjeni i naziv, adresa i OIB).</li>
-<li>Kontrola nakon zamjene DC10 osi u bloku 5: čvor i dalje leži <b>točno na osi</b>, udaljenost <b>0,00 m</b>.</li>
+<li>Kontrola nakon zamjene DC10 osi kasnije: čvor i dalje leži <b>točno na osi</b>, udaljenost <b>0,00 m</b>.</li>
 </ul>
 <iframe src="karta_s04.html" loading="lazy"></iframe>
 </div></div>
@@ -123,13 +131,14 @@ nije konačna). Sve tri promjene su čisto administrativne: čvor ostaje gdje je
 
 
 <!-- ============================================================ 2 -->
-<div class="card" id="s02"><h2>Stavka 2 — obilaznica: puni naziv i JPT na osi i 4 koridora <span class="p">· primjedba 2.1.1.a · blok 1 + 2</span></h2><div class="body">
+<div class="card" id="s02"><h2>Stavka 2 — obilaznica: puni naziv i JPT na osi i 4 koridora <span class="p">primjedba 2.1.1.a</span></h2><div class="body">
 <p class="quote">„U atributnoj tablici dodati kompletan naziv: Nova zagrebačka obilaznica
 Zaprešić-Samobor-Horvati-Mraclin-Ivanić-Grad-Sveti Ivan Zelina (koridor u istraživanju). Korigirati naziv
 javnopravnog tijela s obzirom da je predmetna trasa autocesta.”
 <small>Zavod za prostorno uređenje Zagrebačke županije, 14.08.2026. — dio primjedbe 2.1.1.a</small></p>
 
-<h3>Što to znači običnim jezikom</h3>
+
+<a class="editorbtn" href="editor.html?c=487275%2C5075934&z=16" target="_blank">🔍 POGLEDAJ U EDITORU</a><br><h3>Što to znači običnim jezikom</h3>
 <p>Obilaznica je u planu bila zapisana skraćeno i s krivim upravljačem — Hrvatske ceste umjesto Hrvatskih
 autocesta. Zavod je diktirao <b>točan, puni naziv trase</b> koji mora stajati u atributnoj tablici, i to
 ne samo na osi nego i na <b>svakom</b> koridorskom poligonu, jer su svi dijelovi iste trase. Zato ova
@@ -143,10 +152,9 @@ prikazuje geometriju <b>kakva je bila 31.07.</b></p>
  <b>„Nova zagrebačka obilaznica Zaprešić-Samobor-Horvati-Mraclin-Ivanić-Grad-Sveti Ivan Zelina
  (koridor u istraživanju)”</b>.</li>
 <li>JPT na svih 5: Hrvatske ceste <code>CES01016</code> → <b>Hrvatske autoceste d.o.o. <code>HAC00019</code></b>.</li>
-<li>Os: <code>IS_1_1</code> fid 5 — <b>11.956,57 m</b> u 11 dijelova, stanje 31.07. (blok 1).</li>
-<li>Koridori (blok 2), stanje 31.07.: fid 34 <b>690.123,17 m²</b> · fid 29 <b>94.241,58 m²</b> ·
- fid 49 <b>67.848,26 m²</b> · fid 25 <b>64.387,88 m²</b> — <b>ukupno 916.600,89 m² = 91,66 ha</b>.</li>
-<li>Daljnja sudbina: fid 25 je u bloku 4 <b>obrisan</b> (apsorbiran u fid 49); ostala tri su proširena na
+<li>Os: <code>IS_1_1</code> — <b>11.956,57 m</b> u 11 dijelova, stanje 31.07. </li>
+<li>Koridori, stanje 31.07.: <b>690.123,17 m²</b><b>94.241,58 m²</b><b>67.848,26 m²</b><b>64.387,88 m²</b> — <b>ukupno 916.600,89 m² = 91,66 ha</b>.</li>
+<li>Daljnja sudbina: je kasnije <b>obrisan</b> (apsorbiran u); ostala tri su proširena na
  ujednačenih 200 m — vidi <a href="#s04">stavku 4</a>.</li>
 </ul>
 <iframe src="karta_s05.html" loading="lazy"></iframe>
@@ -155,22 +163,22 @@ prikazuje geometriju <b>kakva je bila 31.07.</b></p>
 
 
 <!-- ============================================================ 3 -->
-<div class="card" id="s03"><h2>Stavka 3 — spojni kanal Zelina–Lonja–Glogovnica <span class="p">· primjedba 2.4.3.a · blok 1</span></h2><div class="body">
+<div class="card" id="s03"><h2>Stavka 3 — spojni kanal Zelina–Lonja–Glogovnica <span class="p">primjedba 2.4.3.a</span></h2><div class="body">
 <p class="quote">„Korigirati trasu spojnog kanala Zelina-Lonja-Glogovnica koji je državnog značaja te
 dopuniti Odredbe. Nasip uz spojni kanal prkazati kao zasebni element.”
 <small>Zavod za prostorno uređenje Zagrebačke županije, 14.08.2026. (tipfeler „prkazati” doslovno iz izvornika)</small></p>
 
-<h3>Što to znači običnim jezikom</h3>
+
+<a class="editorbtn" href="editor.html?c=488840%2C5077056&z=16" target="_blank">🔍 POGLEDAJ U EDITORU</a><br><h3>Što to znači običnim jezikom</h3>
 <p>Kanal je vođen kao vodotok <b>lokalnog</b> značaja, a on je <b>državni</b> — to je razlika u kodu i u
 tome tko je za njega nadležan. Dvije od tri Zavodove tražbine ovdje su već bile pokrivene ili su riješene:
-nasip uz kanal <b>već je prije</b> bio zaseban element i već kodiran kao državni, a značaj je ispravljen u
-bloku 1. Ono što <b>nije</b> zatvoreno je sama <i>trasa</i> — Zavod traži usklađenje s grafikom PPZŽ-a, a tu
+nasip uz kanal <b>već je prije</b> bio zaseban element i već kodiran kao državni, a značaj je ispravljen kasnije. Ono što <b>nije</b> zatvoreno je sama <i>trasa</i> — Zavod traži usklađenje s grafikom PPZŽ-a, a tu
 podlogu nemamo, pa se trasa nije mogla ni provjeriti ni ispraviti. Dopuna Odredbi također ostaje kod
 urbanista, čiji je odgovor i dalje u futuru („korigirati će se”).</p>
 
 <h3>Što je napravljeno (s brojkama)</h3>
 <ul>
-<li><code>IS_4_3</code> fid 3, trasa <b>14.287,88 m</b> — geometrija <b>nedirana</b>.</li>
+<li><code>IS_4_3</code> trasa <b>14.287,88 m</b> — geometrija nepromijenjena.</li>
 <li>kod <code>IS-4-3-3201</code> (lokalni značaj) → <b><code>IS-4-3-1201</code></b> (državni značaj).</li>
 <li>naziv teme dopunjen riječima <b>„državnog značaja”</b>.</li>
 <li><code>dodatni_naziv_teme</code>: prazno → <b>„Spojni kanal Zelina-Lonja-Glogovnica”</b>.</li>
@@ -184,14 +192,15 @@ i dopuna Odredbi. Ova je stavka dakle <b>djelomično</b> zatvorena prema Zavodu.
 
 
 <!-- ============================================================ 4 -->
-<div class="card" id="s04"><h2>Stavka 4 — autocesta: dvije „osi” u jednu, koridor 200 m <span class="p">· primjedba 2.1.1.a · blok 4</span></h2><div class="body">
+<div class="card" id="s04"><h2>Stavka 4 — autocesta: dvije „osi” u jednu, koridor 200 m <span class="p">primjedba 2.1.1.a</span></h2><div class="body">
 <p class="quote">„Potrebno je korigirati planiranu autocestu odnosno Novu zagrebačku obilaznicu
 Zaprešić-Samobor-Horvati-Mraclin-Ivanić-Grad-Sveti Ivan Zelina (koridor u istraživanju) na sljedeći
 način: korigirati kod teme (nova zagrebačka obilaznica je planirana autocesta), prikazati ju kao jednu os,
 uskladiti širinu koridora s člankom 33. Odredbi PPZŽ te dopuniti Odredbe.”
 <small>Zavod za prostorno uređenje Zagrebačke županije, 14.08.2026. — geometrijski dio primjedbe 2.1.1.a</small></p>
 
-<h3>Što to znači običnim jezikom</h3>
+
+<a class="editorbtn" href="editor.html?c=487275%2C5075934&z=16" target="_blank">🔍 POGLEDAJ U EDITORU</a><br><h3>Što to znači običnim jezikom</h3>
 <p>Ovdje je Zavod uočio stvarnu grešku u crtežu, ne formalnost. Ono što je u planu bilo upisano kao „os”
 autoceste zapravo su bila <b>dva ruba kolnika</b> — dvije usporedne linije razmaknute oko 80 m
 (±40 m od prave osi). Prostorni plan prikazuje cestu kao <b>jednu os</b>; rubovi kolnika su razina
@@ -205,18 +214,17 @@ suvišna i obrisana su.</p>
 
 <h3>Što je napravljeno (s brojkama)</h3>
 <ul>
-<li><b>Os</b> <code>IS_1_1</code> fid 5: <b>11.956,57 m u 11 dijelova → 6.432,44 m u 5 dijelova</b>
+<li><b>Os</b> <code>IS_1_1</code>: <b>11.956,57 m u 11 dijelova → 6.432,44 m u 5 dijelova</b>
  (DXF layer <code>21-00-AUTOCESTA-PLAN-OS</code>, clipan na obuhvat).</li>
 <li>Kod <code>IS-1-1-1004</code> → <b><code>IS-1-1-1002</code></b>; oznaka <code>D</code> →
  <b><code>AC</code></b>; naziv „Cesta državnog značaja - planirano” → <b>„Autocesta - planirano”</b>.
  Isti prekod na sva tri zadržana koridora.</li>
 <li><b>Koridor</b> proširen na ujednačenih <b>200,0 m</b> (DXF <code>21-00-KORIDOR-AUTOCESTA</code>):
- dodano <b>319.856,31 m² u 15 komada</b> — fid 34 <b>690.123,2 → 886.032,0 m²</b> ·
- fid 49 <b>67.848,3 → 168.805,9 m²</b> · fid 29 <b>94.241,6 → 117.231,6 m²</b>.</li>
+ dodano <b>319.856,31 m² u 15 komada</b> — <b>690.123,2 → 886.032,0 m²</b><b>67.848,3 → 168.805,9 m²</b><b>94.241,6 → 117.231,6 m²</b>.</li>
 <li>Kontrola po uniji svih koridora: <b>916.600,9 → 1.172.069,4 m² (+255.468,6 m²)</b>, IoU
  <b>0,782</b>; stari koridori <b>strogo sadržani</b> u novom (provjereno: 0 m² starog izvan novog).</li>
-<li><b>Obrisano</b> <b>67.632,48 m²</b> u 2 featurea: fid 25 (<b>64.387,88 m²</b>, apsorbiran u fid 49)
- i fid 9 (<b>3.244,60 m²</b>, „AC mrvica” — 100 % unutar novog koridora, nova os prolazi kroz nju,
+<li><b>Obrisano</b> <b>67.632,48 m²</b> u 2 featurea: (<b>64.387,88 m²</b>, apsorbiran u)
+ i (<b>3.244,60 m²</b>, „AC mrvica” — 100 % unutar novog koridora, nova os prolazi kroz nju,
  udaljenost 0,00 m).</li>
 </ul>
 <div class="note"><b>Ostaje tekst — i to onaj koji Zavod sigurno opet pogleda.</b> Širina koridora od
@@ -229,12 +237,13 @@ suvišna i obrisana su.</p>
 
 
 <!-- ============================================================ 5 -->
-<div class="card" id="s05"><h2>Stavka 5 — dodana planirana DC Vrbovec–Ivanić-Grad <span class="p">· primjedba 2.1.1.c · blok 4 + 6</span></h2><div class="body">
-<p class="quote">„Dodati trasu i koridor planirane državne ceste ( Vrbovec- - Ivanić-Grad ) te dopuniti
+<div class="card" id="s05"><h2>Stavka 5 — dodana planirana DC Vrbovec–Ivanić-Grad <span class="p">primjedba 2.1.1.c</span></h2><div class="body">
+<p class="quote">„Dodati trasu i koridor planirane državne ceste ( Vrbovec- - Ivanić-Grad) te dopuniti
 Odredbe.”
 <small>Zavod za prostorno uređenje Zagrebačke županije, 14.08.2026.</small></p>
 
-<h3>Što to znači običnim jezikom</h3>
+
+<a class="editorbtn" href="editor.html?c=492938%2C5075347&z=16" target="_blank">🔍 POGLEDAJ U EDITORU</a><br><h3>Što to znači običnim jezikom</h3>
 <p>Jedna rečenica primjedbe, a iza nje najveći pojedinačni dodatak u rundi: <b>cijele te ceste u planu
 uopće nije bilo</b>. Ni linije, ni koridora — Zavod je usporedio s PPZŽ-om i vidio da nedostaje planirana
 državna cesta prema Ivanić-Gradu. Trasa je postojala u DXF-u urbanista, ali nikad nije ušla u GPKG.</p>
@@ -247,21 +256,21 @@ dvije ceste koje se ne susreću.</p>
 
 <h3>Što je napravljeno (s brojkama)</h3>
 <ul>
-<li><b>NOVI</b> <code>IS_1_1</code> fid 51 (id <code>Vde9NCSOiDn4qUj601l1xz</code>) — <b>os 5.996,31 m</b>
+<li><b>NOVI</b> <code>IS_1_1</code> — <b>os 5.996,31 m</b>
  u 1 dijelu, 638 vrhova. Sastav: DXF <code>21-02-DRZAVNE-PLAN</code> 7.193,8 m → clip na obuhvat
- 5.966,31 m → + spoj iz bloka 6 <b>+29,996 m</b>.</li>
-<li><b>NOVI</b> <code>IS_1_1</code> fid 52 (id <code>3tr5UTPOUwKcGCQoDAx69a</code>) —
+ 5.966,31 m → + spoj iz tog koraka <b>+29,996 m</b>.</li>
+<li><b>NOVI</b> <code>IS_1_1</code> —
  <b>koridor 593.905,56 m²</b>, <b>širina 100,0 m</b>. Sastav: DXF 704.983,8 m² → clip 590.905,93 m² →
- + blok 6 <b>2.999,63 m²</b> (kontrola: 100 m × 29,9963 m = 2.999,63 m² ✓).</li>
+ + sljedeći korak <b>2.999,63 m²</b> (kontrola: 100 m × 29,9963 m = 2.999,63 m² ✓).</li>
 <li>Kod <code>IS-1-1-1004</code>, JPT Hrvatske ceste d.o.o. <code>CES00012</code>.</li>
-<li>Spoj: presjek fid 51 × fid 26 = <b>točno 1 točka</b> (T-čvor, dodir bez prelaska)
- @ E <b>493.290,011</b> · N <b>5.079.048,648</b> (EPSG:3765).</li>
+<li>Spoj: presjek × = <b>točno 1 točka</b> (T-čvor, dodir bez prelaska)
+ @ E <b>493.290,011</b>N <b>5.079.048,648</b> (EPSG:3765).</li>
 <li>Provjereno: nova os ne stvara <b>nijedan novi presjek</b> s ostalim objektima u <code>IS_1_1</code>
  i u cijelosti leži unutar vlastitog koridora.</li>
 </ul>
 <div class="note"><b>Dva relinka koja sigurno fale.</b> Oba nova featurea imaju
 <code>od_clanak_stavak_tocka_ids = NULL</code> — nemaju veze na odredbe. Ostale državne ceste u sloju
-koriste članak <code>2gLWDHDGk8Widhi3a4JcGm</code>. Povezati <b>nakon</b> uploada — u editoru (ovaj sloj se ne uploada na platformu, v. napomenu na vrhu ove arhive).
+koriste članak. Povezati <b>nakon</b> uploada — u editoru (ovaj sloj se ne uploada na platformu, v. napomenu na vrhu ove arhive).
 <br><b>Ostaje tekst:</b> dopuna Odredbi — čl. 38. st. 1. ne navodi ovu cestu (primjedba 2.1.1.f).</div>
 <iframe src="karta_s11.html" loading="lazy"></iframe>
 </div></div>
@@ -269,11 +278,12 @@ koriste članak <code>2gLWDHDGk8Widhi3a4JcGm</code>. Povezati <b>nakon</b> uploa
 
 
 <!-- ============================================================ 6 -->
-<div class="card" id="s06"><h2>Stavka 6 — DC 10 svedena na jednu os <span class="p">· primjedba 2.1.1.b · blok 5</span></h2><div class="body">
+<div class="card" id="s06"><h2>Stavka 6 — DC 10 svedena na jednu os <span class="p">primjedba 2.1.1.b</span></h2><div class="body">
 <p class="quote">„Križanje državne ceste DC10 i lokalne ceste LC 31048 prikazati u skladu s PPZŽ i PPUG.”
 <small>Zavod za prostorno uređenje Zagrebačke županije, 14.08.2026.</small></p>
 
-<h3>Što to znači običnim jezikom</h3>
+
+<a class="editorbtn" href="editor.html?c=486695%2C5083129&z=16" target="_blank">🔍 POGLEDAJ U EDITORU</a><br><h3>Što to znači običnim jezikom</h3>
 <p>Zavodova primjedba spominje samo <b>jedno križanje</b>, ali uzrok je bio isti kao kod autoceste i mnogo
 širi od tog raskrižja. DC 10 je bila nacrtana kao <b>dva ruba kolnika plus sve rampe</b> — 35 zasebnih
 komada umjesto jedne linije. Zbog toga se DC 10 s lokalnom cestom LC 31048 <b>sjekla dva puta, na 9,7 m
@@ -286,10 +296,10 @@ njezine priključke. Atributi ceste nisu dirani ni u jednom polju.</p>
 
 <h3>Što je napravljeno (s brojkama)</h3>
 <ul>
-<li><code>IS_1_1</code> fid 26: <b>35.015,85 m u 35 dijelova → 15.849,10 m u 1 dijelu</b>
+<li><code>IS_1_1</code>: <b>35.015,85 m u 35 dijelova → 15.849,10 m u 1 dijelu</b>
  (DXF <code>21-01-BRZA-CESTA</code>, 16.621,1 m, clipan na obuhvat).</li>
 <li>Križanje s LC 31048: <b>2 presjeka na 9,7 m razmaka → točno 1 presjek</b>
- @ E <b>485.147,01</b> · N <b>5.083.451,62</b> (EPSG:3765).</li>
+ @ E <b>485.147,01</b>N <b>5.083.451,62</b> (EPSG:3765).</li>
 <li>Kod <code>IS-1-1-1011</code> i <b>svi atributi nedirani</b> — mijenja se isključivo geometrija.</li>
 <li>Otpale 2 petlje: <b>1.092,9 m u 16 komada</b> (Pirakovec/ŽC3034 i Prilesje/ŽC3079) — rampe, ne os.</li>
 <li>Kontrola: čvor „Rakovečica” (<a href="#s01">stavka 1</a>) i dalje leži na osi, udaljenost <b>0,00 m</b>.</li>
@@ -300,13 +310,14 @@ njezine priključke. Atributi ceste nisu dirani ni u jednom polju.</p>
 
 
 <!-- ============================================================ 7 -->
-<div class="card" id="s07"><h2>Stavka 7 — koridor DV 2×110 kV: 8 → 60 m <span class="p">· primjedba 2.3.2.a · blok 4</span></h2><div class="body">
+<div class="card" id="s07"><h2>Stavka 7 — koridor DV 2×110 kV: 8 → 60 m <span class="p">primjedba 2.3.2.a</span></h2><div class="body">
 <p class="quote">„Korigirati širinu koridora planiranih dalekovoda DV 100 kV sukladno PPUG i PPZŽ. Također
 u atributnim tablicama su u polje vlastita oznaka navedene širine dalekovoda. Većinu opisa treba
 ispraviti. Npr.”
 <small>Zavod za prostorno uređenje Zagrebačke županije, 14.08.2026. („DV 100 kV” je tipfeler izvornika, riječ je o 110 kV)</small></p>
 
-<h3>Što to znači običnim jezikom</h3>
+
+<a class="editorbtn" href="editor.html?c=492165%2C5085982&z=16" target="_blank">🔍 POGLEDAJ U EDITORU</a><br><h3>Što to znači običnim jezikom</h3>
 <p>Zaštitni koridor je pojas oko dalekovoda u kojem vrijede ograničenja gradnje; njegova širina propisana
 je i ovisi o naponu i broju sustava. Koridor priključnog dalekovoda <b>2×110 kV</b> bio je nacrtan svega
 <b>8 metara</b> širok. To nije previd u odnosu na neki vanjski propis — <b>same Odredbe ovog plana</b> za
@@ -318,14 +329,13 @@ geometrije <b>bile su točne</b>; trebalo je popraviti samo opis, pa im geometri
 
 <h3>Što je napravljeno (s brojkama)</h3>
 <ul>
-<li><code>IS_3_2</code> fid 1 (koridor uz os fid 120): <b>36.080,61 → 267.705,99 m²</b>
+<li><code>IS_3_2</code> (koridor uz os): <b>36.080,61 → 267.705,99 m²</b>
  — dodano <b>232.011,55 m²</b>, otpalo <b>386,17 m²</b>. Širina <b>8,0 → 60,0 m</b> (30+30 m od osi).
  Nova geometrija iz DXF-a <code>22-01-KORIDOR-DALEKOVOD</code>.</li>
 <li><code>vlastita_oznaka_naziv</code> dopunjen: „…ZAŠTITNI KORIDOR ŠIRINE <b>60,0 m (30+30 m od osi
  DV-a)</b>”.</li>
-<li>Tri koridora <b>samo opis, geometrija nedirana</b> (izmjerene širine bile točne):
- fid 8 → <b>50,0 m (25+25)</b> · fid 20 → <b>7,0 m (3,5+3,5, kabelski vod)</b> ·
- fid 95 → <b>50,0 m (25+25)</b>.</li>
+<li>Tri koridora <b>samo opis, geometrija nepromijenjena</b> (izmjerene širine bile točne):
+ → <b>50,0 m (25+25)</b>→ <b>7,0 m (3,5+3,5, kabelski vod)</b>→ <b>50,0 m (25+25)</b>.</li>
 </ul>
 <div class="note">Odgovor urbanista na ovu primjedbu glasio je u futuru — „Korigirati će se navedeno.”
 Napravljeno je <b>u GPKG-u</b>, pa je stavka zatvorena bez obzira na njihov materijal.</div>
@@ -335,12 +345,13 @@ Napravljeno je <b>u GPKG-u</b>, pa je stavka zatvorena bez obzira na njihov mate
 
 
 <!-- ============================================================ 8 -->
-<div class="card" id="s08"><h2>Stavka 8 — EK uređaj premješten na k.č. 286/12 <span class="p">· primjedba 2.2.1.a · blok 7</span></h2><div class="body">
+<div class="card" id="s08"><h2>Stavka 8 — EK uređaj premješten na k.č. 286/12 <span class="p">primjedba 2.2.1.a</span></h2><div class="body">
 <p class="quote">„Elektroničku komunikacijsku infrastrukturu — uređaj potrebno je prikazati na
 k.č.br. 286/12 gdje se isti nalazi."
 <small>Zavod za prostorno uređenje Zagrebačke županije, 14.08.2026.</small></p>
 
-<h3>Što to znači običnim jezikom</h3>
+
+<a class="editorbtn" href="editor.html?c=485468%2C5084523&z=16" target="_blank">🔍 POGLEDAJ U EDITORU</a><br><h3>Što to znači običnim jezikom</h3>
 <p>Radionavigacijski uređaj u planu je bio ucrtan na krivom mjestu — Zavod je dao točnu česticu na kojoj
 se stvarno nalazi. Zahvat je najjednostavniji mogući: zona uređaja pomakne se u komadu, bez ikakve
 promjene oblika, veličine ili atributa.</p>
@@ -353,36 +364,37 @@ smjeru). Tri neovisne procjene centra kruga daju isti odgovor.</p>
 
 <h3>Što je napravljeno (s brojkama)</h3>
 <ul>
-<li><code>IS_2_2</code> fid 2 (id <code>bzRBpxu6xw9t9dezdjoKkC</code>, kod <code>IS-2-2-1101</code>,
+<li><code>IS_2_2</code> ( kod <code>IS-2-2-1101</code>,
  „RADIONAVIGACIJSKI UREĐAJ”): <b>čista translacija za (−125,59, −24,34) m</b>, duljina pomaka
  <b>127,93 m</b>.</li>
-<li>Centar zone: E <b>485.468,14</b> · N <b>5.084.520,20</b> → E <b>485.342,55</b> · N <b>5.084.495,86</b>
+<li>Centar zone: E <b>485.468,14</b>N <b>5.084.520,20</b> → E <b>485.342,55</b>N <b>5.084.495,86</b>
  (EPSG:3765) — novi centar poklapa se s centroidom čestice na <b>0,00 m</b>.</li>
 <li>Zona <b>20.536,641 m²</b>, radijus <b>80,85 m</b> — <b>prije = poslije</b>, delta <b>0,000000 m²</b>.
  Oblik očuvan: svih <b>92 vrha identična</b> relativno na centroid.</li>
-<li><b>Atributi netaknuti</b> — svih 12 atributnih kolona bit-za-bit identično.</li>
+<li><b>Atributi netaknuti</b> — svih 12 atributnih kolona nepromijenjeno.</li>
 <li>k.č. <b>286/12, k.o. Samoborec</b> (333212), <b>444,07 m²</b>: prije zahvata <b>0 %</b> unutar zone,
  poslije <b>100 %</b>.</li>
 <li>Dokaz identifikacije: mjerilo slike <b>0,3516 m/px</b> (krug 230 px = 80,85 m) → izmjereno
- <b>~109 m, azimut 96°</b>. <b>R2</b> (fid 2): 127,9 m / 79° → <b>+17 % i −17°</b> ✓.
- <b>R1</b> (fid 1): 604,1 m / 214° → <b>+454 % i +118°</b> ✗.</li>
-<li><code>IS_2_2</code> fid 1 (R1) ostao <b>bit-za-bit netaknut</b>.</li>
+ <b>~109 m, azimut 96°</b>. <b>R2</b>: 127,9 m / 79° → <b>+17 % i −17°</b> ✓.
+ <b>R1</b>: 604,1 m / 214° → <b>+454 % i +118°</b> ✗.</li>
+<li><code>IS_2_2</code> (R1) ostao <b>bit-za-bit netaknut</b>.</li>
 </ul>
 <div class="note"><b>Otvoreno, niskog prioriteta.</b> Ako Zavodova primjedba implicira da je i drugi
 uređaj (R1) krivo pozicioniran, za to treba zasebna slika ili podloga — iz priložene se to ne može
 utvrditi.<br>
 <b>Za relink:</b> provjeriti da <code>vlastita_oznaka_naziv</code> i
-<code>od_clanak_stavak_tocka_ids</code> (<code>T8Hkfdcz7cSVzhD6ZNNnxt</code>) i dalje opisuju isti uređaj.</div>
+<code>od_clanak_stavak_tocka_ids</code> i dalje opisuju isti uređaj.</div>
 <iframe src="karta_s17.html" loading="lazy"></iframe>
 </div></div>
 
 
 
 <div class="foot">
-<b>Ova datoteka je arhiva.</b> Sve stavke ovdje pripadaju infrastrukturnim kartama (2.x, slojevi <code>IS_*</code>) koje se ne uploadaju na platformu ePlanovi -- uploadaju se samo karte 1.1, 2.1 i 1.3 (v. glavnu datoteku). Vrijednosti u karticama služe kao checklista za ručno prepisivanje u ePlanovi editoru.<br>
-Glavna datoteka (13 stavki koje se uploadaju): <a href="VRBOVEC_IZMJENE_PO_STAVKAMA.html">VRBOVEC_IZMJENE_PO_STAVKAMA.html</a> -- ondje je i mapa renumeracije staro-&gt;novo (HTML komentar na vrhu datoteke).<br>
-Izvori, baseline/kandidat GPKG, manifesti i datumi: identični glavnoj datoteci.<br>
-Izrađeno 01.09.2026., dopunjeno 02.09. blokovima 7 i 8 te 03.09.2026. blokovima 10 i 11 · izdvojeno u zasebnu arhivu 03.09.2026.
+<b>Ova stranica je popis infrastrukturnih izmjena (karte 2.x) koje se rade izravno u ePlanovi editoru</b> —
+vrijednosti u karticama služe kao gotov popis za prepisivanje.<br>
+Glavna stranica (izmjene na kartama koje se uploadaju — 1.1, 2.1, 1.3):
+<a href="VRBOVEC_IZMJENE_PO_STAVKAMA.html">VRBOVEC_IZMJENE_PO_STAVKAMA.html</a>.<br>
+<br>Pregled izrađen 03.09.2026.
 </div>
 
 </main></body></html>
