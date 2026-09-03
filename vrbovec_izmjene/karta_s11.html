@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang=hr><head><meta charset="utf-8">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content=noindex>
+<title>Stavka 11 — dodana planirana DC Vrbovec–Ivanić-Grad (2.1.1.c)</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.9.2/proj4.js"></script>
+<style>
+ html,body,#map{height:100%;margin:0}
+ .panel{background:rgba(255,255,255,.96);padding:10px 12px;font:13px/1.45 -apple-system,Segoe UI,sans-serif;
+   box-shadow:0 0 8px rgba(0,0,0,.35);max-width:300px;border-radius:5px;max-height:88vh;overflow:auto}
+ .panel h3{margin:0 0 4px;font-size:13.5px}
+ .panel .desc{color:#333;margin:0 0 8px;font-size:11.5px}
+ .panel .cats{border-top:1px solid #ddd;padding-top:6px}
+ .panel .cats div{margin:3px 0;font-size:11.5px}
+ .panel .hint{border-top:1px solid #ddd;margin-top:6px;padding-top:6px;color:#555;font-size:10.5px;font-style:italic}
+ .sw{display:inline-block;width:13px;height:13px;border:1px solid #444;margin-right:6px;vertical-align:middle}
+ .coordbox{font:12px monospace}
+ .leaflet-control-layers{font:12px sans-serif;max-height:80vh;overflow:auto}
+ .leaflet-popup-content{font:13px/1.5 -apple-system,Segoe UI,sans-serif;max-width:390px}
+ .leaflet-popup-content code{font:11.5px Consolas,monospace;background:#eef2f7;padding:1px 4px;border-radius:3px}
+ .bl{display:inline-block;background:#26354f;color:#fff;font-size:10px;font-weight:700;
+   padding:1px 7px;border-radius:9px;letter-spacing:.3px}
+ .lbl{background:transparent;border:none;box-shadow:none;color:#fff;font-weight:bold;
+   font-size:11px;text-shadow:0 0 3px #000,0 0 3px #000,0 0 4px #000,0 0 5px #000}
+</style></head><body><div id="map"></div><script>
+proj4.defs("EPSG:3765","+proj=tmerc +lat_0=0 +lon_0=16.5 +k=0.9999 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs");
+var data={"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[16.411631, 45.805019], [16.411463, 45.805641], [16.405518, 45.83003], [16.405366, 45.830718], [16.405514, 45.833205], [16.405697, 45.833747], [16.406963, 45.837205], [16.407047, 45.837394], [16.407595, 45.838215], [16.408299, 45.838321], [16.408608, 45.838535], [16.408178, 45.83877], [16.408659, 45.839116], [16.413856, 45.842544], [16.414154, 45.842768], [16.414351, 45.843327], [16.414334, 45.843393], [16.414241, 45.843614], [16.41286, 45.846448], [16.412783, 45.846661], [16.412703, 45.847352], [16.412757, 45.847719], [16.412966, 45.848593], [16.413034, 45.849166], [16.41303, 45.849657], [16.412958, 45.851237], [16.414244, 45.851273], [16.414317, 45.849679], [16.414321, 45.849128], [16.414243, 45.848475], [16.414034, 45.847603], [16.413989, 45.847309], [16.414042, 45.84685], [16.414111, 45.846666], [16.415478, 45.843865], [16.415564, 45.843665], [16.415617, 45.843494], [16.415625, 45.843459], [16.415193, 45.842237], [16.415013, 45.842083], [16.414773, 45.841912], [16.409393, 45.83836], [16.409209, 45.838226], [16.408605, 45.837641], [16.40853, 45.837724], [16.408549, 45.837568], [16.408294, 45.837162], [16.408129, 45.837147], [16.408183, 45.836916], [16.406938, 45.833509], [16.406769, 45.833005], [16.406644, 45.830827], [16.406772, 45.830244], [16.412716, 45.805854], [16.412888, 45.805211], [16.416045, 45.801525], [16.416582, 45.801223], [16.417815, 45.800575], [16.417191, 45.800707], [16.415044, 45.801034], [16.411631, 45.805019]]]}, "properties": {"grp": "kor", "color": "#1a9641", "popup": "<b>Stavka 11 · primjedba 2.1.1.c — NOVI koridor DC Vrbovec–Ivanić-Grad</b><br><span class=bl>BLOK 4 + 6</span> <code>IS_1_1</code> <b>NOVI fid 52</b> · id <code>3tr5UTPOUwKcGCQoDAx69a</code><br>Površina: <b>593.905,56 m²</b>, <b>širina 100,0 m</b>.<br>Sastav: DXF 704.983,8 m² → clip na obuhvat 590.905,9 m² + blok 6 2.999,6 m².<br><br>⚠️ <code>od_clanak_stavak_tocka_ids = <b>NULL</b></code> → povezivanje s odredbama obavezno <b>nakon</b> uploada.", "tooltip": "NOVI koridor DC V–IG", "fillOpacity": 0.35, "noFill": false, "weight": 2, "dash": null, "label": null, "E": 492938, "N": 5075347}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[16.413601, 45.851255], [16.413674, 45.849668], [16.413677, 45.849147], [16.413604, 45.848534], [16.413404, 45.847697], [16.413352, 45.847402], [16.413346, 45.847331], [16.413413, 45.846755], [16.413559, 45.846392], [16.414851, 45.843758], [16.414968, 45.843473], [16.414988, 45.843393], [16.414673, 45.842502], [16.414526, 45.842377], [16.414318, 45.84223], [16.409188, 45.838847], [16.408777, 45.838562], [16.408733, 45.838529], [16.407657, 45.837251], [16.407467, 45.836784], [16.406305, 45.833593], [16.406139, 45.833096], [16.406005, 45.830772], [16.406153, 45.830106], [16.412097, 45.805716], [16.412259, 45.805115], [16.415627, 45.801183], [16.416208, 45.800856]]}, "properties": {"grp": "os", "color": "#1f5fbf", "popup": "<b>Stavka 11 · primjedba 2.1.1.c — NOVA os planirane DC Vrbovec–Ivanić-Grad</b><br><span class=bl>BLOK 4 + 6</span> <code>IS_1_1</code> <b>NOVI fid 51</b> · id <code>Vde9NCSOiDn4qUj601l1xz</code><br>Zavod: ta cesta <b>uopće ne postoji</b> u planu.<br><br>Dodana iz DXF-a <code>21-02-DRZAVNE-PLAN</code> (7.193,8 m), clip na obuhvat → 5.966,3 m, + spoj iz bloka 6 <b>+30,0 m</b> = <b>5.996,3 m</b> u 1 dijelu (638 vrhova).<br>Kod <code>IS-1-1-1004</code>, JPT Hrvatske ceste d.o.o. <code>CES00012</code>.<br><br>⚠️ <code>od_clanak_stavak_tocka_ids = <b>NULL</b></code> → relink nakon uploada.", "tooltip": "NOVA DC Vrbovec–Ivanić-Grad — 5.996,3 m", "fillOpacity": 0.4, "noFill": false, "weight": 5, "dash": null, "label": "nova DC V–IG", "E": 492709, "N": 5076699}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[16.289676, 45.894572], [16.291176, 45.893964], [16.293005, 45.893355], [16.294046, 45.893062], [16.295051, 45.892813], [16.296273, 45.892553], [16.297903, 45.892271], [16.299681, 45.892011], [16.34433, 45.885675], [16.347471, 45.885183], [16.349468, 45.884749], [16.351549, 45.884159], [16.353929, 45.883291], [16.356883, 45.88187], [16.358771, 45.880709], [16.360392, 45.879504], [16.36222, 45.877842], [16.363782, 45.876268], [16.365301, 45.874859], [16.367326, 45.873329], [16.372036, 45.870424], [16.374516, 45.868687], [16.376808, 45.866736], [16.379191, 45.864264], [16.381491, 45.861908], [16.383884, 45.85991], [16.386047, 45.858397], [16.388737, 45.856812], [16.391664, 45.855385], [16.394007, 45.854431], [16.397078, 45.853398], [16.400363, 45.852536], [16.404224, 45.851813], [16.407744, 45.851406], [16.409859, 45.851272], [16.412291, 45.851219], [16.415339, 45.851303], [16.417964, 45.851512], [16.420941, 45.851905], [16.424179, 45.85253], [16.427493, 45.853398], [16.431028, 45.854608], [16.433652, 45.855723], [16.436394, 45.857112], [16.448529, 45.863828], [16.450468, 45.864877], [16.451889, 45.86557], [16.453348, 45.86622], [16.455692, 45.867228], [16.45706, 45.867899], [16.458631, 45.868864], [16.460009, 45.869951], [16.461354, 45.871322], [16.46249, 45.872583]]}, "properties": {"grp": "dc10", "color": "#8f8f8f", "popup": "<b>Kontekst</b> — os DC 10 (<code>IS_1_1</code> fid 26) na koju se nova cesta spaja. Sama DC 10 je predmet stavke 12.", "tooltip": "DC 10 (kontekst)", "fillOpacity": 0.4, "noFill": false, "weight": 3, "dash": "8,5", "label": null, "E": 490258, "N": 5080990}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [16.413601, 45.851255]}, "properties": {"grp": "t", "color": "#e6194b", "popup": "<b>Stavka 11 — spoj na DC 10</b><br><span class=bl>BLOK 6</span><br>Os je u DXF-u završavala <b>29,995407 m prije</b> DC10 — to je bilo tako nacrtano, nije artefakt clipa. Produljena je pravocrtno po azimutu zadnjeg segmenta (358,2293°) za <b>+29,996 m</b>.<br>Rezultat: presjek fid 51 × fid 26 = <b>točno 1 točka</b> (T-čvor, dodir bez prelaska) @ E 493.290,011 · N 5.079.048,648.", "tooltip": null, "fillOpacity": 0.4, "noFill": false, "weight": 3, "dash": null, "label": "spoj na DC 10", "E": 493290, "N": 5079049}}]};
+var c2l=[["kor", "NOVI koridor DC Vrbovec–Ivanić-Grad (100 m) (1)"], ["os", "NOVA os DC Vrbovec–Ivanić-Grad (1)"], ["dc10", "DC 10 — os na koju se spaja (kontekst) (1)"], ["t", "T-čvor spoja (1)"]];
+var map=L.map('map',{preferCanvas:true});
+var esri=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+ {maxNativeZoom:18,maxZoom:21,attribution:'Esri World Imagery'}).addTo(map);
+var osm=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+ {maxNativeZoom:19,maxZoom:21,attribution:'OpenStreetMap'});
+var gsat=L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
+ {subdomains:['mt0','mt1','mt2','mt3'],maxNativeZoom:20,maxZoom:21,attribution:'Google'});
+var baseLayers={'Esri satelit':esri,'OSM (karta)':osm,'Google satelit':gsat};
+function edlink(E,N){return 'editor.html?c='+E+'%2C'+N+'&z=16';}
+function st(f){var p=f.properties;var s={color:p.color||'#3388ff',weight:p.weight||3,
+  fillColor:p.color||'#3388ff',fillOpacity:(p.fillOpacity==null?0.35:p.fillOpacity)};
+  if(p.dash) s.dashArray=p.dash; if(p.noFill) s.fill=false; return s;}
+function ptl(f,latlng){return L.circleMarker(latlng,{radius:7,color:'#fff',weight:2,
+  fillColor:f.properties.color||'#000',fillOpacity:.95});}
+function oef(f,l){var p=f.properties;
+  var pop=(p.popup||'')+'<br><span style="color:#666;font-size:11px">('+p.E+', '+p.N+' / EPSG:3765)</span>'+
+    '<br><a href="'+edlink(p.E,p.N)+'" target="_blank">&rarr; otvori u editoru</a>';
+  l.bindPopup(pop,{maxWidth:400});
+  if(p.label){l.bindTooltip(p.label,{permanent:true,direction:'center',className:'lbl'});}
+  else if(p.tooltip){l.bindTooltip(p.tooltip);}}
+var overlays={}, all=[];
+c2l.forEach(function(it){
+  var lyr=L.geoJSON(data,{filter:function(f){return f.properties.grp===it[0];},
+    style:st,pointToLayer:ptl,onEachFeature:oef});
+  if(lyr.getLayers().length){ lyr.addTo(map); overlays[it[1]]=lyr; all.push(lyr); }});
+L.control.layers(baseLayers,overlays,{collapsed:false,position:'topleft'}).addTo(map);
+var grp=L.featureGroup(all);
+function fitAll(){ map.invalidateSize();
+  if(data.features.length){ map.fitBounds(grp.getBounds().pad(0.08)); }
+  else { map.setView([45.88,16.45],13); } }
+fitAll(); setTimeout(fitAll,250); setTimeout(fitAll,900);
+window.addEventListener('resize', function(){ map.invalidateSize(); });
+map.on('contextmenu', function(e){
+  var en=proj4('EPSG:4326','EPSG:3765',[e.latlng.lng,e.latlng.lat]);
+  var E=Math.round(en[0]), N=Math.round(en[1]);
+  L.popup().setLatLng(e.latlng).setContent(
+    '<div class=coordbox><b>EPSG:3765</b><br>E&nbsp;'+E+'<br>N&nbsp;'+N+
+    '<br>lat/lon '+e.latlng.lat.toFixed(5)+', '+e.latlng.lng.toFixed(5)+
+    '<br><a href="'+edlink(E,N)+'" target="_blank">&rarr; otvori u editoru</a></div>').openOn(map);
+});
+var lg=L.control({position:'topright'});lg.onAdd=function(){var d=L.DomUtil.create('div','panel');
+ d.innerHTML="<h3>Stavka 11 — dodana planirana DC Vrbovec–Ivanić-Grad (2.1.1.c)</h3><div class=desc>Cijela cesta je <b>nova</b> &#8212; u planu je prije nije bilo. Plava puna = os, zeleno = koridor &#353;irine 100 m, crvena to&#269;ka = T-&#269;vor spoja na DC 10 (siva crtkana, kontekst).</div><div class=cats><div><span class=sw style='background:#1a9641'></span>NOVI koridor DC Vrbovec–Ivanić-Grad (100 m) (1)</div><div><span class=sw style='background:#1f5fbf'></span>NOVA os DC Vrbovec–Ivanić-Grad (1)</div><div><span class=sw style='background:#8f8f8f'></span>DC 10 — os na koju se spaja (kontekst) (1)</div><div><span class=sw style='background:#e6194b'></span>T-čvor spoja (1)</div></div><div class=hint>Gore-lijevo: baza (satelit / OSM) + pali/gasi slojeve.<br>Klik na objekt = detalji i brojke. DESNI klik = koordinate (EPSG:3765) + link u ePlanovi editor.<br>Geometrija pojednostavljena 0,8 m samo radi prikaza; sve brojke su iz to&#269;ne geometrije.</div>";
+ L.DomEvent.disableClickPropagation(d);return d;};lg.addTo(map);
+</script></body></html>

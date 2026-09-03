@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang=hr><head><meta charset="utf-8">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content=noindex>
+<title>Stavka 6 — spojni kanal Zelina–Lonja–Glogovnica (2.4.3.a)</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.9.2/proj4.js"></script>
+<style>
+ html,body,#map{height:100%;margin:0}
+ .panel{background:rgba(255,255,255,.96);padding:10px 12px;font:13px/1.45 -apple-system,Segoe UI,sans-serif;
+   box-shadow:0 0 8px rgba(0,0,0,.35);max-width:300px;border-radius:5px;max-height:88vh;overflow:auto}
+ .panel h3{margin:0 0 4px;font-size:13.5px}
+ .panel .desc{color:#333;margin:0 0 8px;font-size:11.5px}
+ .panel .cats{border-top:1px solid #ddd;padding-top:6px}
+ .panel .cats div{margin:3px 0;font-size:11.5px}
+ .panel .hint{border-top:1px solid #ddd;margin-top:6px;padding-top:6px;color:#555;font-size:10.5px;font-style:italic}
+ .sw{display:inline-block;width:13px;height:13px;border:1px solid #444;margin-right:6px;vertical-align:middle}
+ .coordbox{font:12px monospace}
+ .leaflet-control-layers{font:12px sans-serif;max-height:80vh;overflow:auto}
+ .leaflet-popup-content{font:13px/1.5 -apple-system,Segoe UI,sans-serif;max-width:390px}
+ .leaflet-popup-content code{font:11.5px Consolas,monospace;background:#eef2f7;padding:1px 4px;border-radius:3px}
+ .bl{display:inline-block;background:#26354f;color:#fff;font-size:10px;font-weight:700;
+   padding:1px 7px;border-radius:9px;letter-spacing:.3px}
+ .lbl{background:transparent;border:none;box-shadow:none;color:#fff;font-weight:bold;
+   font-size:11px;text-shadow:0 0 3px #000,0 0 3px #000,0 0 4px #000,0 0 5px #000}
+</style></head><body><div id="map"></div><script>
+proj4.defs("EPSG:3765","+proj=tmerc +lat_0=0 +lon_0=16.5 +k=0.9999 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs");
+var data={"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[16.302938, 45.879099], [16.304659, 45.876357], [16.30645, 45.873618], [16.307496, 45.872312], [16.308235, 45.871431], [16.30891, 45.870562], [16.309283, 45.869797], [16.309456, 45.869397], [16.309607, 45.868996], [16.309657, 45.868746], [16.309701, 45.867914], [16.309673, 45.867503], [16.309548, 45.866768], [16.309504, 45.866387], [16.309502, 45.86607], [16.309573, 45.86518], [16.309666, 45.86498], [16.310618, 45.863571], [16.310977, 45.862834], [16.311118, 45.862466], [16.311367, 45.862], [16.311561, 45.861777], [16.311949, 45.861567], [16.312464, 45.861328], [16.313039, 45.86111], [16.313587, 45.860849], [16.314106, 45.860547], [16.314419, 45.860264], [16.31456, 45.860009], [16.314633, 45.859705], [16.314547, 45.859301], [16.314354, 45.858961], [16.314016, 45.858565], [16.313829, 45.858209], [16.313788, 45.858074], [16.313812, 45.857718], [16.313913, 45.857497], [16.314075, 45.857213], [16.314245, 45.857029], [16.314916, 45.856737], [16.31538, 45.856591], [16.315884, 45.856459], [16.316537, 45.856232], [16.317585, 45.855918], [16.318158, 45.855693], [16.318637, 45.85535], [16.318795, 45.855124], [16.318963, 45.854765], [16.319124, 45.854505], [16.319244, 45.85437], [16.319566, 45.854151], [16.320784, 45.853633], [16.32152, 45.853435], [16.321927, 45.85339], [16.322811, 45.853377], [16.324428, 45.853457], [16.324735, 45.853437], [16.325205, 45.853247], [16.325442, 45.85313], [16.325653, 45.852994], [16.326121, 45.852569], [16.326419, 45.852362], [16.326809, 45.852188], [16.327308, 45.851989], [16.328529, 45.851448], [16.330367, 45.850478], [16.330701, 45.850249], [16.330883, 45.850088], [16.330916, 45.84988], [16.331102, 45.849302], [16.331281, 45.849007], [16.331605, 45.848494], [16.332083, 45.847817], [16.332314, 45.847602], [16.333007, 45.847217], [16.333577, 45.846942], [16.334442, 45.846781], [16.335411, 45.846556], [16.336082, 45.846386], [16.336504, 45.846263], [16.336731, 45.8461], [16.336876, 45.845932], [16.337305, 45.845391], [16.338102, 45.84427], [16.338283, 45.844086], [16.338734, 45.843784], [16.340301, 45.8429], [16.340764, 45.842816], [16.342936, 45.842493], [16.34345, 45.842391], [16.343891, 45.842252], [16.344124, 45.842155], [16.344213, 45.842068], [16.345001, 45.841538], [16.346772, 45.840198], [16.356343, 45.833269], [16.357156, 45.832657], [16.357333, 45.83246], [16.357424, 45.832327], [16.357569, 45.831999], [16.358738, 45.828161], [16.359532, 45.825624], [16.35961, 45.825434], [16.35982, 45.825031], [16.360088, 45.824652], [16.360731, 45.824059], [16.36099, 45.823904], [16.361703, 45.823612], [16.363115, 45.823104], [16.366201, 45.822035], [16.369341, 45.820912], [16.371266, 45.820242], [16.373857, 45.819405], [16.374901, 45.819108], [16.376436, 45.818707], [16.376934, 45.818615], [16.379609, 45.818052], [16.380708, 45.817845], [16.389134, 45.816073], [16.396609, 45.814549], [16.398873, 45.814115], [16.404206, 45.813026], [16.405265, 45.812855], [16.405905, 45.812842], [16.406665, 45.812884], [16.415625, 45.813763], [16.425183, 45.814747], [16.426062, 45.814813], [16.426856, 45.814813], [16.428488, 45.814762], [16.429904, 45.814611], [16.431363, 45.814278], [16.432434, 45.813942], [16.433625, 45.813482], [16.434363, 45.81313], [16.434734, 45.812937]]}, "properties": {"grp": "a", "color": "#7b3fa0", "popup": "<b>Stavka 6 · primjedba 2.4.3.a — spojni kanal Zelina–Lonja–Glogovnica</b><br><span class=bl>BLOK 1</span> <code>IS_4_3</code> fid 3 · id <code>5zmvfi8TPGUmtGYGTXkT94</code><br>Duljina trase: <b>14.288 m</b> (nepromijenjena).<br><br><b>Staro → novo:</b><br>kod <code>IS-4-3-3201</code> → <code><b>IS-4-3-1201</b></code> (lokalni → <b>državni</b> značaj)<br>naziv dopunjen riječima „<b>državnog značaja</b>”<br>dodatni naziv: prazno → „<b>Spojni kanal Zelina-Lonja-Glogovnica</b>”<br><br>Nasip je već prije bio zaseban element i već kodiran <code>1201</code> — nije ga trebalo dirati.<br><i>Nula bajtova geometrije promijenjeno.</i>", "tooltip": "2.4.3.a kanal — 3201 → 1201", "fillOpacity": 0.4, "noFill": false, "weight": 5, "dash": "9,5", "label": null, "E": 488840, "N": 5077056}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [16.356343, 45.833269]}, "properties": {"grp": "a", "color": "#7b3fa0", "popup": "<b>Stavka 6 · primjedba 2.4.3.a — spojni kanal Zelina–Lonja–Glogovnica</b><br><span class=bl>BLOK 1</span> <code>IS_4_3</code> fid 3 · id <code>5zmvfi8TPGUmtGYGTXkT94</code><br>Duljina trase: <b>14.288 m</b> (nepromijenjena).<br><br><b>Staro → novo:</b><br>kod <code>IS-4-3-3201</code> → <code><b>IS-4-3-1201</b></code> (lokalni → <b>državni</b> značaj)<br>naziv dopunjen riječima „<b>državnog značaja</b>”<br>dodatni naziv: prazno → „<b>Spojni kanal Zelina-Lonja-Glogovnica</b>”<br><br>Nasip je već prije bio zaseban element i već kodiran <code>1201</code> — nije ga trebalo dirati.<br><i>Nula bajtova geometrije promijenjeno.</i>", "tooltip": null, "fillOpacity": 0.4, "noFill": false, "weight": 3, "dash": null, "label": "3201 → 1201  ·  državni značaj", "E": 488840, "N": 5077056}}]};
+var c2l=[["a", "Spojni kanal Zelina–Lonja–Glogovnica (IS_4_3 fid 3) (2)"]];
+var map=L.map('map',{preferCanvas:true});
+var esri=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+ {maxNativeZoom:18,maxZoom:21,attribution:'Esri World Imagery'}).addTo(map);
+var osm=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+ {maxNativeZoom:19,maxZoom:21,attribution:'OpenStreetMap'});
+var gsat=L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
+ {subdomains:['mt0','mt1','mt2','mt3'],maxNativeZoom:20,maxZoom:21,attribution:'Google'});
+var baseLayers={'Esri satelit':esri,'OSM (karta)':osm,'Google satelit':gsat};
+function edlink(E,N){return 'editor.html?c='+E+'%2C'+N+'&z=16';}
+function st(f){var p=f.properties;var s={color:p.color||'#3388ff',weight:p.weight||3,
+  fillColor:p.color||'#3388ff',fillOpacity:(p.fillOpacity==null?0.35:p.fillOpacity)};
+  if(p.dash) s.dashArray=p.dash; if(p.noFill) s.fill=false; return s;}
+function ptl(f,latlng){return L.circleMarker(latlng,{radius:7,color:'#fff',weight:2,
+  fillColor:f.properties.color||'#000',fillOpacity:.95});}
+function oef(f,l){var p=f.properties;
+  var pop=(p.popup||'')+'<br><span style="color:#666;font-size:11px">('+p.E+', '+p.N+' / EPSG:3765)</span>'+
+    '<br><a href="'+edlink(p.E,p.N)+'" target="_blank">&rarr; otvori u editoru</a>';
+  l.bindPopup(pop,{maxWidth:400});
+  if(p.label){l.bindTooltip(p.label,{permanent:true,direction:'center',className:'lbl'});}
+  else if(p.tooltip){l.bindTooltip(p.tooltip);}}
+var overlays={}, all=[];
+c2l.forEach(function(it){
+  var lyr=L.geoJSON(data,{filter:function(f){return f.properties.grp===it[0];},
+    style:st,pointToLayer:ptl,onEachFeature:oef});
+  if(lyr.getLayers().length){ lyr.addTo(map); overlays[it[1]]=lyr; all.push(lyr); }});
+L.control.layers(baseLayers,overlays,{collapsed:false,position:'topleft'}).addTo(map);
+var grp=L.featureGroup(all);
+function fitAll(){ map.invalidateSize();
+  if(data.features.length){ map.fitBounds(grp.getBounds().pad(0.08)); }
+  else { map.setView([45.88,16.45],13); } }
+fitAll(); setTimeout(fitAll,250); setTimeout(fitAll,900);
+window.addEventListener('resize', function(){ map.invalidateSize(); });
+map.on('contextmenu', function(e){
+  var en=proj4('EPSG:4326','EPSG:3765',[e.latlng.lng,e.latlng.lat]);
+  var E=Math.round(en[0]), N=Math.round(en[1]);
+  L.popup().setLatLng(e.latlng).setContent(
+    '<div class=coordbox><b>EPSG:3765</b><br>E&nbsp;'+E+'<br>N&nbsp;'+N+
+    '<br>lat/lon '+e.latlng.lat.toFixed(5)+', '+e.latlng.lng.toFixed(5)+
+    '<br><a href="'+edlink(E,N)+'" target="_blank">&rarr; otvori u editoru</a></div>').openOn(map);
+});
+var lg=L.control({position:'topright'});lg.onAdd=function(){var d=L.DomUtil.create('div','panel');
+ d.innerHTML="<h3>Stavka 6 — spojni kanal Zelina–Lonja–Glogovnica (2.4.3.a)</h3><div class=desc>Trasa se ne mi&#269;e; kanal se prekodira iz lokalnog u dr&#382;avni zna&#269;aj i dobiva ime.</div><div class=cats><div><span class=sw style='background:#7b3fa0'></span>Spojni kanal Zelina–Lonja–Glogovnica (IS_4_3 fid 3) (2)</div></div><div class=hint>Gore-lijevo: baza (satelit / OSM) + pali/gasi slojeve.<br>Klik na objekt = detalji i brojke. DESNI klik = koordinate (EPSG:3765) + link u ePlanovi editor.<br>Geometrija pojednostavljena 0,8 m samo radi prikaza; sve brojke su iz to&#269;ne geometrije.</div>";
+ L.DomEvent.disableClickPropagation(d);return d;};lg.addTo(map);
+</script></body></html>

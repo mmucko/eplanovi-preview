@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang=hr><head><meta charset="utf-8">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content=noindex>
+<title>Stavka 1 — Strelište MUP-a (1.1.a)</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.9.2/proj4.js"></script>
+<style>
+ html,body,#map{height:100%;margin:0}
+ .panel{background:rgba(255,255,255,.96);padding:10px 12px;font:13px/1.45 -apple-system,Segoe UI,sans-serif;
+   box-shadow:0 0 8px rgba(0,0,0,.35);max-width:300px;border-radius:5px;max-height:88vh;overflow:auto}
+ .panel h3{margin:0 0 4px;font-size:13.5px}
+ .panel .desc{color:#333;margin:0 0 8px;font-size:11.5px}
+ .panel .cats{border-top:1px solid #ddd;padding-top:6px}
+ .panel .cats div{margin:3px 0;font-size:11.5px}
+ .panel .hint{border-top:1px solid #ddd;margin-top:6px;padding-top:6px;color:#555;font-size:10.5px;font-style:italic}
+ .sw{display:inline-block;width:13px;height:13px;border:1px solid #444;margin-right:6px;vertical-align:middle}
+ .coordbox{font:12px monospace}
+ .leaflet-control-layers{font:12px sans-serif;max-height:80vh;overflow:auto}
+ .leaflet-popup-content{font:13px/1.5 -apple-system,Segoe UI,sans-serif;max-width:390px}
+ .leaflet-popup-content code{font:11.5px Consolas,monospace;background:#eef2f7;padding:1px 4px;border-radius:3px}
+ .bl{display:inline-block;background:#26354f;color:#fff;font-size:10px;font-weight:700;
+   padding:1px 7px;border-radius:9px;letter-spacing:.3px}
+ .lbl{background:transparent;border:none;box-shadow:none;color:#fff;font-weight:bold;
+   font-size:11px;text-shadow:0 0 3px #000,0 0 3px #000,0 0 4px #000,0 0 5px #000}
+</style></head><body><div id="map"></div><script>
+proj4.defs("EPSG:3765","+proj=tmerc +lat_0=0 +lon_0=16.5 +k=0.9999 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs");
+var data={"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[16.381179, 45.857003], [16.381349, 45.857017], [16.382292, 45.851531], [16.382223, 45.851525], [16.382249, 45.851358], [16.38232, 45.851363], [16.382325, 45.851336], [16.382184, 45.851324], [16.382378, 45.850227], [16.38222, 45.850227], [16.382206, 45.850339], [16.38222, 45.850227], [16.379405, 45.85023], [16.379004, 45.852404], [16.37809, 45.857868], [16.378284, 45.857976], [16.377068, 45.859493], [16.377547, 45.859614], [16.38037, 45.861233], [16.381179, 45.857003]]]}, "properties": {"grp": "a", "color": "#7b3fa0", "popup": "<b>Stavka 1 · primjedba 1.1.a — Strelište MUP-a</b><br><span class=bl>BLOK 1 + 2</span> <code>KN_1_1</code> fid 14 · id <code>JpNF5wMpJNRYKuDyk7J9nc</code><br>Površina plohe: <b>272.936,36 m² = 27,29 ha</b> (nepromijenjena).<br><br><b>Staro → novo:</b><br>kod <code>KN-1-1-1800</code> → <code><b>KN-1-1-1801</b></code><br>oznaka <code>PN</code> → <code><b>PNo</b></code><br>naziv „Posebna namjena državnog značaja” → „<b>… - ostalo</b>”<br>dodatni naziv: prazno → „<b>Strelište MUP-a</b>”<br><br><i>Nula bajtova geometrije promijenjeno — samo atributi.</i>", "tooltip": "1.1.a Strelište MUP-a", "fillOpacity": 0.2, "noFill": false, "weight": 3, "dash": "7,5", "label": null, "E": 490695, "N": 5079435}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [16.380183, 45.854704]}, "properties": {"grp": "a", "color": "#7b3fa0", "popup": "<b>Stavka 1 · primjedba 1.1.a — Strelište MUP-a</b><br><span class=bl>BLOK 1 + 2</span> <code>KN_1_1</code> fid 14 · id <code>JpNF5wMpJNRYKuDyk7J9nc</code><br>Površina plohe: <b>272.936,36 m² = 27,29 ha</b> (nepromijenjena).<br><br><b>Staro → novo:</b><br>kod <code>KN-1-1-1800</code> → <code><b>KN-1-1-1801</b></code><br>oznaka <code>PN</code> → <code><b>PNo</b></code><br>naziv „Posebna namjena državnog značaja” → „<b>… - ostalo</b>”<br>dodatni naziv: prazno → „<b>Strelište MUP-a</b>”<br><br><i>Nula bajtova geometrije promijenjeno — samo atributi.</i>", "tooltip": null, "fillOpacity": 0.4, "noFill": false, "weight": 3, "dash": null, "label": "1800 → 1801  ·  Strelište MUP-a", "E": 490695, "N": 5079435}}]};
+var c2l=[["a", "Strelište MUP-a — ploha (KN_1_1 fid 14) (2)"]];
+var map=L.map('map',{preferCanvas:true});
+var esri=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+ {maxNativeZoom:18,maxZoom:21,attribution:'Esri World Imagery'}).addTo(map);
+var osm=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+ {maxNativeZoom:19,maxZoom:21,attribution:'OpenStreetMap'});
+var gsat=L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
+ {subdomains:['mt0','mt1','mt2','mt3'],maxNativeZoom:20,maxZoom:21,attribution:'Google'});
+var baseLayers={'Esri satelit':esri,'OSM (karta)':osm,'Google satelit':gsat};
+function edlink(E,N){return 'editor.html?c='+E+'%2C'+N+'&z=16';}
+function st(f){var p=f.properties;var s={color:p.color||'#3388ff',weight:p.weight||3,
+  fillColor:p.color||'#3388ff',fillOpacity:(p.fillOpacity==null?0.35:p.fillOpacity)};
+  if(p.dash) s.dashArray=p.dash; if(p.noFill) s.fill=false; return s;}
+function ptl(f,latlng){return L.circleMarker(latlng,{radius:7,color:'#fff',weight:2,
+  fillColor:f.properties.color||'#000',fillOpacity:.95});}
+function oef(f,l){var p=f.properties;
+  var pop=(p.popup||'')+'<br><span style="color:#666;font-size:11px">('+p.E+', '+p.N+' / EPSG:3765)</span>'+
+    '<br><a href="'+edlink(p.E,p.N)+'" target="_blank">&rarr; otvori u editoru</a>';
+  l.bindPopup(pop,{maxWidth:400});
+  if(p.label){l.bindTooltip(p.label,{permanent:true,direction:'center',className:'lbl'});}
+  else if(p.tooltip){l.bindTooltip(p.tooltip);}}
+var overlays={}, all=[];
+c2l.forEach(function(it){
+  var lyr=L.geoJSON(data,{filter:function(f){return f.properties.grp===it[0];},
+    style:st,pointToLayer:ptl,onEachFeature:oef});
+  if(lyr.getLayers().length){ lyr.addTo(map); overlays[it[1]]=lyr; all.push(lyr); }});
+L.control.layers(baseLayers,overlays,{collapsed:false,position:'topleft'}).addTo(map);
+var grp=L.featureGroup(all);
+function fitAll(){ map.invalidateSize();
+  if(data.features.length){ map.fitBounds(grp.getBounds().pad(0.08)); }
+  else { map.setView([45.88,16.45],13); } }
+fitAll(); setTimeout(fitAll,250); setTimeout(fitAll,900);
+window.addEventListener('resize', function(){ map.invalidateSize(); });
+map.on('contextmenu', function(e){
+  var en=proj4('EPSG:4326','EPSG:3765',[e.latlng.lng,e.latlng.lat]);
+  var E=Math.round(en[0]), N=Math.round(en[1]);
+  L.popup().setLatLng(e.latlng).setContent(
+    '<div class=coordbox><b>EPSG:3765</b><br>E&nbsp;'+E+'<br>N&nbsp;'+N+
+    '<br>lat/lon '+e.latlng.lat.toFixed(5)+', '+e.latlng.lng.toFixed(5)+
+    '<br><a href="'+edlink(E,N)+'" target="_blank">&rarr; otvori u editoru</a></div>').openOn(map);
+});
+var lg=L.control({position:'topright'});lg.onAdd=function(){var d=L.DomUtil.create('div','panel');
+ d.innerHTML="<h3>Stavka 1 — Strelište MUP-a (1.1.a)</h3><div class=desc>Ploha se ne mi&#269;e ni za milimetar; mijenja se samo &#353;ifra namjene, oznaka i naziv. Ljubi&#269;asti crtkani obris = ploha na kojoj je promijenjen atribut.</div><div class=cats><div><span class=sw style='background:#7b3fa0'></span>Strelište MUP-a — ploha (KN_1_1 fid 14) (2)</div></div><div class=hint>Gore-lijevo: baza (satelit / OSM) + pali/gasi slojeve.<br>Klik na objekt = detalji i brojke. DESNI klik = koordinate (EPSG:3765) + link u ePlanovi editor.<br>Geometrija pojednostavljena 0,8 m samo radi prikaza; sve brojke su iz to&#269;ne geometrije.</div>";
+ L.DomEvent.disableClickPropagation(d);return d;};lg.addTo(map);
+</script></body></html>

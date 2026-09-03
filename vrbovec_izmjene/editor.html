@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="hr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Preusmjeravanje u ePlanovi editor…</title>
+<script src="editor_config.js"></script>
+<style>
+ body{font:15px/1.6 -apple-system,Segoe UI,Roboto,sans-serif;background:#f2f4f7;color:#1c2733;
+   margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh}
+ .box{background:#fff;max-width:560px;padding:26px 30px;border-radius:8px;
+   box-shadow:0 1px 6px rgba(0,0,0,.14)}
+ h1{margin:0 0 10px;font-size:18px;color:#14213d}
+ p{margin:8px 0} a{color:#2f7ae5}
+ code{background:#eef2f7;padding:1px 5px;border-radius:3px;font:12.5px Consolas,monospace}
+ .warn{background:#fff8e1;border-left:4px solid #f0b429;padding:10px 14px;border-radius:0 5px 5px 0}
+</style></head><body>
+<div class="box">
+ <h1>Otvaram plan u ePlanovi editoru…</h1>
+ <p id="stat">Preusmjeravanje je u tijeku. Ako se ništa ne dogodi za koju sekundu,
+  kliknite poveznicu ispod.</p>
+ <p><a id="lnk" href="https://editor-ispu.gov.hr/" target="_blank" rel="noopener">→ Otvori ručno</a></p>
+ <noscript>
+  <div class="warn"><b>JavaScript je isključen.</b> Ova stranica samo preusmjerava na
+   ePlanovi editor i za to joj treba JavaScript.<br>
+   Otvorite <a href="https://editor-ispu.gov.hr/" target="_blank" rel="noopener">editor-ispu.gov.hr</a>
+   i zalijepite identifikator plana iz datoteke <code>editor_config.js</code>.</div>
+ </noscript>
+ <p style="color:#667;font-size:12.5px;margin-top:18px">
+  Identifikator plana drži se na jednom mjestu — <code>DASHBOARD\editor_config.js</code>.
+  Nakon svakog uploada platforma dodijeli novi UUID; upiše se ondje i svi linkovi u svim
+  dashboardima i kartama rade dalje bez ijedne druge izmjene.</p>
+</div>
+<script>
+(function () {
+  var BASE = "https://editor-ispu.gov.hr/prostorni-plan/";
+  var uuid = window.EDITOR_UUID;
+  var qs = window.location.search || "";          // prosljedjuje c, z, bbox, ...
+  var el = document.getElementById("stat");
+  var a = document.getElementById("lnk");
+  if (!uuid) {
+    el.innerHTML = "<b>Nije postavljen identifikator plana.</b> Provjerite da se "
+      + "<code>editor_config.js</code> ucitao i da sadrzi <code>window.EDITOR_UUID</code>.";
+    return;
+  }
+  var url = BASE + encodeURIComponent(uuid) + qs;
+  a.href = url;
+  a.textContent = "→ Otvori ručno: " + url;
+  window.location.replace(url);
+})();
+</script>
+</body></html>

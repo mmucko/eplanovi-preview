@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang=hr><head><meta charset="utf-8">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content=noindex>
+<title>Stavka 7 — groblje Lovrečka Varoš: GPN → GPIN (1.2.b)</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.9.2/proj4.js"></script>
+<style>
+ html,body,#map{height:100%;margin:0}
+ .panel{background:rgba(255,255,255,.96);padding:10px 12px;font:13px/1.45 -apple-system,Segoe UI,sans-serif;
+   box-shadow:0 0 8px rgba(0,0,0,.35);max-width:300px;border-radius:5px;max-height:88vh;overflow:auto}
+ .panel h3{margin:0 0 4px;font-size:13.5px}
+ .panel .desc{color:#333;margin:0 0 8px;font-size:11.5px}
+ .panel .cats{border-top:1px solid #ddd;padding-top:6px}
+ .panel .cats div{margin:3px 0;font-size:11.5px}
+ .panel .hint{border-top:1px solid #ddd;margin-top:6px;padding-top:6px;color:#555;font-size:10.5px;font-style:italic}
+ .sw{display:inline-block;width:13px;height:13px;border:1px solid #444;margin-right:6px;vertical-align:middle}
+ .coordbox{font:12px monospace}
+ .leaflet-control-layers{font:12px sans-serif;max-height:80vh;overflow:auto}
+ .leaflet-popup-content{font:13px/1.5 -apple-system,Segoe UI,sans-serif;max-width:390px}
+ .leaflet-popup-content code{font:11.5px Consolas,monospace;background:#eef2f7;padding:1px 4px;border-radius:3px}
+ .bl{display:inline-block;background:#26354f;color:#fff;font-size:10px;font-weight:700;
+   padding:1px 7px;border-radius:9px;letter-spacing:.3px}
+ .lbl{background:transparent;border:none;box-shadow:none;color:#fff;font-weight:bold;
+   font-size:11px;text-shadow:0 0 3px #000,0 0 3px #000,0 0 4px #000,0 0 5px #000}
+</style></head><body><div id="map"></div><script>
+proj4.defs("EPSG:3765","+proj=tmerc +lat_0=0 +lon_0=16.5 +k=0.9999 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs");
+var data={"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[16.419002, 45.909434], [16.41872, 45.910089], [16.418074, 45.911588], [16.417899, 45.911461], [16.418071, 45.911229], [16.417859, 45.910944], [16.417856, 45.91083], [16.4181, 45.91059], [16.41793, 45.910524], [16.417741, 45.910502], [16.417351, 45.910503], [16.417029, 45.910408], [16.417146, 45.910172], [16.416428, 45.909948], [16.416895, 45.909578], [16.417427, 45.909749], [16.418081, 45.909918], [16.419002, 45.909434]]]}, "properties": {"grp": "ctx", "color": "#ffd166", "popup": "<b>Kontekst</b> — ploha groblja u karti namjene (<code>KN-1-1-3290</code>, <b>15.619,06 m²</b> na ovoj lokaciji). Namjena se <b>ne dira</b>; mijenja se samo režim građevinskog područja ispod nje.", "tooltip": "groblje — ploha namjene", "fillOpacity": 0.18, "noFill": false, "weight": 2, "dash": "5,4", "label": null, "E": 493653, "N": 5085634}}, {"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[16.416428, 45.909948], [16.417146, 45.910172], [16.41719, 45.910082], [16.417505, 45.909783], [16.417474, 45.909761], [16.416895, 45.909578], [16.416428, 45.909948]]]}, "properties": {"grp": "g", "color": "#f28e2b", "popup": "<b>Stavka 7 · primjedba 1.2.b — groblje Lovrečka Varoš: GPN → GPIN</b><br><span class=bl>BLOK 2</span> <code>KN_2_1</code> · dio 1/2<br>Površina ovog dijela: <b>2.878,76 m²</b><br><br>Izlazi iz <b>GP naselja</b> (parent <code>3301</code> fid 10 / dijete <code>3303</code> fid 5) i ulazi u <b>izdvojeno GP izvan naselja</b> (parent <code>3201</code> fid 9 / dijete <code>3203</code> fid 1).<br><br>Ukupno premješteno <b>3.750,49 m²</b>. Groblje (<code>KN-1-1-3290</code>, 15.619,06 m²) sada je <b>100 % GPIN</b> — prije 24 % GPN / 76 % GPIN.<br>Čestice <b>k.č. 96/8</b> i <b>475/8</b> k.o. Lovrečka Varoš (po odgovoru urbanista).<br>Snap-weld 0,1 m na ulazu u GPIN: 8/18 vrhova pomaknuto za max <b>0,0005 m</b>, <b>0 novih vrhova</b> — susjedne plohe ostaju topološki čiste.", "tooltip": "1.2.b groblje — 2.878,76 m²", "fillOpacity": 0.55, "noFill": false, "weight": 3, "dash": null, "label": "GPN → GPIN", "E": 493555, "N": 5085567}}, {"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[16.417081, 45.910305], [16.417029, 45.910408], [16.417351, 45.910503], [16.417741, 45.910502], [16.41793, 45.910524], [16.417944, 45.910452], [16.417081, 45.910305]]]}, "properties": {"grp": "g", "color": "#f28e2b", "popup": "<b>Stavka 7 · primjedba 1.2.b — groblje Lovrečka Varoš: GPN → GPIN</b><br><span class=bl>BLOK 2</span> <code>KN_2_1</code> · dio 2/2<br>Površina ovog dijela: <b>871,73 m²</b><br><br>Izlazi iz <b>GP naselja</b> (parent <code>3301</code> fid 10 / dijete <code>3303</code> fid 5) i ulazi u <b>izdvojeno GP izvan naselja</b> (parent <code>3201</code> fid 9 / dijete <code>3203</code> fid 1).<br><br>Ukupno premješteno <b>3.750,49 m²</b>. Groblje (<code>KN-1-1-3290</code>, 15.619,06 m²) sada je <b>100 % GPIN</b> — prije 24 % GPN / 76 % GPIN.<br>Čestice <b>k.č. 96/8</b> i <b>475/8</b> k.o. Lovrečka Varoš (po odgovoru urbanista).<br>Snap-weld 0,1 m na ulazu u GPIN: 8/18 vrhova pomaknuto za max <b>0,0005 m</b>, <b>0 novih vrhova</b> — susjedne plohe ostaju topološki čiste.", "tooltip": "1.2.b groblje — 871,73 m²", "fillOpacity": 0.55, "noFill": false, "weight": 3, "dash": null, "label": null, "E": 493596, "N": 5085625}}]};
+var c2l=[["ctx", "Groblje Lovrečka Varoš — cijela ploha (KN_1_1, kod 3290) (1)"], ["g", "Premješteno GPN → GPIN (KN_2_1) (2)"]];
+var map=L.map('map',{preferCanvas:true});
+var esri=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+ {maxNativeZoom:18,maxZoom:21,attribution:'Esri World Imagery'}).addTo(map);
+var osm=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+ {maxNativeZoom:19,maxZoom:21,attribution:'OpenStreetMap'});
+var gsat=L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
+ {subdomains:['mt0','mt1','mt2','mt3'],maxNativeZoom:20,maxZoom:21,attribution:'Google'});
+var baseLayers={'Esri satelit':esri,'OSM (karta)':osm,'Google satelit':gsat};
+function edlink(E,N){return 'editor.html?c='+E+'%2C'+N+'&z=16';}
+function st(f){var p=f.properties;var s={color:p.color||'#3388ff',weight:p.weight||3,
+  fillColor:p.color||'#3388ff',fillOpacity:(p.fillOpacity==null?0.35:p.fillOpacity)};
+  if(p.dash) s.dashArray=p.dash; if(p.noFill) s.fill=false; return s;}
+function ptl(f,latlng){return L.circleMarker(latlng,{radius:7,color:'#fff',weight:2,
+  fillColor:f.properties.color||'#000',fillOpacity:.95});}
+function oef(f,l){var p=f.properties;
+  var pop=(p.popup||'')+'<br><span style="color:#666;font-size:11px">('+p.E+', '+p.N+' / EPSG:3765)</span>'+
+    '<br><a href="'+edlink(p.E,p.N)+'" target="_blank">&rarr; otvori u editoru</a>';
+  l.bindPopup(pop,{maxWidth:400});
+  if(p.label){l.bindTooltip(p.label,{permanent:true,direction:'center',className:'lbl'});}
+  else if(p.tooltip){l.bindTooltip(p.tooltip);}}
+var overlays={}, all=[];
+c2l.forEach(function(it){
+  var lyr=L.geoJSON(data,{filter:function(f){return f.properties.grp===it[0];},
+    style:st,pointToLayer:ptl,onEachFeature:oef});
+  if(lyr.getLayers().length){ lyr.addTo(map); overlays[it[1]]=lyr; all.push(lyr); }});
+L.control.layers(baseLayers,overlays,{collapsed:false,position:'topleft'}).addTo(map);
+var grp=L.featureGroup(all);
+function fitAll(){ map.invalidateSize();
+  if(data.features.length){ map.fitBounds(grp.getBounds().pad(0.08)); }
+  else { map.setView([45.88,16.45],13); } }
+fitAll(); setTimeout(fitAll,250); setTimeout(fitAll,900);
+window.addEventListener('resize', function(){ map.invalidateSize(); });
+map.on('contextmenu', function(e){
+  var en=proj4('EPSG:4326','EPSG:3765',[e.latlng.lng,e.latlng.lat]);
+  var E=Math.round(en[0]), N=Math.round(en[1]);
+  L.popup().setLatLng(e.latlng).setContent(
+    '<div class=coordbox><b>EPSG:3765</b><br>E&nbsp;'+E+'<br>N&nbsp;'+N+
+    '<br>lat/lon '+e.latlng.lat.toFixed(5)+', '+e.latlng.lng.toFixed(5)+
+    '<br><a href="'+edlink(E,N)+'" target="_blank">&rarr; otvori u editoru</a></div>').openOn(map);
+});
+var lg=L.control({position:'topright'});lg.onAdd=function(){var d=L.DomUtil.create('div','panel');
+ d.innerHTML="<h3>Stavka 7 — groblje Lovrečka Varoš: GPN → GPIN (1.2.b)</h3><div class=desc>Naran&#269;asto = dijelovi groblja koji prelaze iz gra&#273;evinskog podru&#269;ja naselja u izdvojeno gra&#273;evinsko podru&#269;je izvan naselja. &#381;uti crtkani obris = cijela ploha groblja u karti namjene (nedirana).</div><div class=cats><div><span class=sw style='background:#ffd166'></span>Groblje Lovrečka Varoš — cijela ploha (KN_1_1, kod 3290) (1)</div><div><span class=sw style='background:#f28e2b'></span>Premješteno GPN → GPIN (KN_2_1) (2)</div></div><div class=hint>Gore-lijevo: baza (satelit / OSM) + pali/gasi slojeve.<br>Klik na objekt = detalji i brojke. DESNI klik = koordinate (EPSG:3765) + link u ePlanovi editor.<br>Geometrija pojednostavljena 0,8 m samo radi prikaza; sve brojke su iz to&#269;ne geometrije.</div>";
+ L.DomEvent.disableClickPropagation(d);return d;};lg.addTo(map);
+</script></body></html>

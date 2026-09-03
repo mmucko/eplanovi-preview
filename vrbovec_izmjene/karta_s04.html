@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang=hr><head><meta charset="utf-8">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content=noindex>
+<title>Stavka 4 — čvor „Rakovečica” (2.1.1.a)</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.9.2/proj4.js"></script>
+<style>
+ html,body,#map{height:100%;margin:0}
+ .panel{background:rgba(255,255,255,.96);padding:10px 12px;font:13px/1.45 -apple-system,Segoe UI,sans-serif;
+   box-shadow:0 0 8px rgba(0,0,0,.35);max-width:300px;border-radius:5px;max-height:88vh;overflow:auto}
+ .panel h3{margin:0 0 4px;font-size:13.5px}
+ .panel .desc{color:#333;margin:0 0 8px;font-size:11.5px}
+ .panel .cats{border-top:1px solid #ddd;padding-top:6px}
+ .panel .cats div{margin:3px 0;font-size:11.5px}
+ .panel .hint{border-top:1px solid #ddd;margin-top:6px;padding-top:6px;color:#555;font-size:10.5px;font-style:italic}
+ .sw{display:inline-block;width:13px;height:13px;border:1px solid #444;margin-right:6px;vertical-align:middle}
+ .coordbox{font:12px monospace}
+ .leaflet-control-layers{font:12px sans-serif;max-height:80vh;overflow:auto}
+ .leaflet-popup-content{font:13px/1.5 -apple-system,Segoe UI,sans-serif;max-width:390px}
+ .leaflet-popup-content code{font:11.5px Consolas,monospace;background:#eef2f7;padding:1px 4px;border-radius:3px}
+ .bl{display:inline-block;background:#26354f;color:#fff;font-size:10px;font-weight:700;
+   padding:1px 7px;border-radius:9px;letter-spacing:.3px}
+ .lbl{background:transparent;border:none;box-shadow:none;color:#fff;font-weight:bold;
+   font-size:11px;text-shadow:0 0 3px #000,0 0 3px #000,0 0 4px #000,0 0 5px #000}
+</style></head><body><div id="map"></div><script>
+proj4.defs("EPSG:3765","+proj=tmerc +lat_0=0 +lon_0=16.5 +k=0.9999 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs");
+var data={"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[16.289676, 45.894572], [16.291176, 45.893964], [16.293005, 45.893355], [16.294046, 45.893062], [16.295051, 45.892813], [16.296273, 45.892553], [16.297903, 45.892271], [16.299681, 45.892011], [16.34433, 45.885675], [16.347471, 45.885183], [16.349468, 45.884749], [16.351549, 45.884159], [16.353929, 45.883291], [16.356883, 45.88187], [16.358771, 45.880709], [16.360392, 45.879504], [16.36222, 45.877842], [16.363782, 45.876268], [16.365301, 45.874859], [16.367326, 45.873329], [16.372036, 45.870424], [16.374516, 45.868687], [16.376808, 45.866736], [16.379191, 45.864264], [16.381491, 45.861908], [16.383884, 45.85991], [16.386047, 45.858397], [16.388737, 45.856812], [16.391664, 45.855385], [16.394007, 45.854431], [16.397078, 45.853398], [16.400363, 45.852536], [16.404224, 45.851813], [16.407744, 45.851406], [16.409859, 45.851272], [16.412291, 45.851219], [16.415339, 45.851303], [16.417964, 45.851512], [16.420941, 45.851905], [16.424179, 45.85253], [16.427493, 45.853398], [16.431028, 45.854608], [16.433652, 45.855723], [16.436394, 45.857112], [16.448529, 45.863828], [16.450468, 45.864877], [16.451889, 45.86557], [16.453348, 45.86622], [16.455692, 45.867228], [16.45706, 45.867899], [16.458631, 45.868864], [16.460009, 45.869951], [16.461354, 45.871322], [16.46249, 45.872583]]}, "properties": {"grp": "ctx", "color": "#1f5fbf", "popup": "<b>Kontekst</b> — os državne ceste DC 10 (<code>IS_1_1</code> fid 26) na koju se čvor veže. Sama os je predmet stavke 12.", "tooltip": "DC 10 (kontekst)", "fillOpacity": 0.4, "noFill": false, "weight": 3, "dash": null, "label": null, "E": 490258, "N": 5080990}}, {"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[16.295858, 45.8928], [16.295844, 45.892703], [16.295801, 45.89261], [16.295671, 45.892475], [16.295483, 45.892379], [16.295351, 45.892345], [16.295213, 45.892331], [16.294982, 45.892353], [16.294854, 45.892393], [16.29474, 45.89245], [16.294646, 45.892523], [16.294575, 45.892608], [16.294532, 45.892701], [16.294517, 45.892798], [16.294531, 45.892895], [16.294574, 45.892989], [16.294704, 45.893124], [16.294811, 45.893187], [16.294935, 45.893233], [16.295162, 45.893267], [16.295302, 45.893261], [16.295437, 45.893234], [16.295561, 45.893188], [16.295669, 45.893125], [16.295799, 45.892991], [16.295843, 45.892898], [16.295858, 45.8928]]]}, "properties": {"grp": "a", "color": "#7b3fa0", "popup": "<b>Stavka 4 · primjedba 2.1.1.a — planirani čvor „Rakovečica”</b><br><span class=bl>BLOK 1</span> <code>IS_1_1</code> fid 41 · id <code>QvSKSy9hjrbU5RGnBbtzp5</code> · kod <code>IS-1-1-2116</code><br><br><b>Staro → novo:</b><br>vlastita oznaka: prazno → „<b>planirani čvor u istraživanju</b>”<br>dodatni naziv: prazno → „<b>Rakovečica</b>”<br>JPT: Hrvatske ceste d.o.o. <code>CES01016</code> → <b>Hrvatske autoceste d.o.o.</b> <code>HAC00019</code> (OIB 57500462912)<br><br>Nakon zamjene DC10 osi u bloku 5 čvor i dalje leži <b>točno na osi</b> (udaljenost 0,00 m).<br><i>Nula bajtova geometrije promijenjeno.</i>", "tooltip": "2.1.1.a čvor Rakovečica", "fillOpacity": 0.35, "noFill": false, "weight": 3, "dash": "7,5", "label": null, "E": 484106, "N": 5083684}}, {"type": "Feature", "geometry": {"type": "Point", "coordinates": [16.295187, 45.892816]}, "properties": {"grp": "a", "color": "#7b3fa0", "popup": "<b>Stavka 4 · primjedba 2.1.1.a — planirani čvor „Rakovečica”</b><br><span class=bl>BLOK 1</span> <code>IS_1_1</code> fid 41 · id <code>QvSKSy9hjrbU5RGnBbtzp5</code> · kod <code>IS-1-1-2116</code><br><br><b>Staro → novo:</b><br>vlastita oznaka: prazno → „<b>planirani čvor u istraživanju</b>”<br>dodatni naziv: prazno → „<b>Rakovečica</b>”<br>JPT: Hrvatske ceste d.o.o. <code>CES01016</code> → <b>Hrvatske autoceste d.o.o.</b> <code>HAC00019</code> (OIB 57500462912)<br><br>Nakon zamjene DC10 osi u bloku 5 čvor i dalje leži <b>točno na osi</b> (udaljenost 0,00 m).<br><i>Nula bajtova geometrije promijenjeno.</i>", "tooltip": null, "fillOpacity": 0.4, "noFill": false, "weight": 3, "dash": null, "label": "čvor „Rakovečica”  ·  JPT → HAC", "E": 484106, "N": 5083684}}]};
+var c2l=[["ctx", "DC 10 — nova os (kontekst) (1)"], ["a", "Planirani čvor „Rakovečica” (IS_1_1 fid 41) (2)"]];
+var map=L.map('map',{preferCanvas:true});
+var esri=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+ {maxNativeZoom:18,maxZoom:21,attribution:'Esri World Imagery'}).addTo(map);
+var osm=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+ {maxNativeZoom:19,maxZoom:21,attribution:'OpenStreetMap'});
+var gsat=L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
+ {subdomains:['mt0','mt1','mt2','mt3'],maxNativeZoom:20,maxZoom:21,attribution:'Google'});
+var baseLayers={'Esri satelit':esri,'OSM (karta)':osm,'Google satelit':gsat};
+function edlink(E,N){return 'editor.html?c='+E+'%2C'+N+'&z=16';}
+function st(f){var p=f.properties;var s={color:p.color||'#3388ff',weight:p.weight||3,
+  fillColor:p.color||'#3388ff',fillOpacity:(p.fillOpacity==null?0.35:p.fillOpacity)};
+  if(p.dash) s.dashArray=p.dash; if(p.noFill) s.fill=false; return s;}
+function ptl(f,latlng){return L.circleMarker(latlng,{radius:7,color:'#fff',weight:2,
+  fillColor:f.properties.color||'#000',fillOpacity:.95});}
+function oef(f,l){var p=f.properties;
+  var pop=(p.popup||'')+'<br><span style="color:#666;font-size:11px">('+p.E+', '+p.N+' / EPSG:3765)</span>'+
+    '<br><a href="'+edlink(p.E,p.N)+'" target="_blank">&rarr; otvori u editoru</a>';
+  l.bindPopup(pop,{maxWidth:400});
+  if(p.label){l.bindTooltip(p.label,{permanent:true,direction:'center',className:'lbl'});}
+  else if(p.tooltip){l.bindTooltip(p.tooltip);}}
+var overlays={}, all=[];
+c2l.forEach(function(it){
+  var lyr=L.geoJSON(data,{filter:function(f){return f.properties.grp===it[0];},
+    style:st,pointToLayer:ptl,onEachFeature:oef});
+  if(lyr.getLayers().length){ lyr.addTo(map); overlays[it[1]]=lyr; all.push(lyr); }});
+L.control.layers(baseLayers,overlays,{collapsed:false,position:'topleft'}).addTo(map);
+var grp=L.featureGroup(all);
+function fitAll(){ map.invalidateSize();
+  if(data.features.length){ map.fitBounds(grp.getBounds().pad(0.08)); }
+  else { map.setView([45.88,16.45],13); } }
+fitAll(); setTimeout(fitAll,250); setTimeout(fitAll,900);
+window.addEventListener('resize', function(){ map.invalidateSize(); });
+map.on('contextmenu', function(e){
+  var en=proj4('EPSG:4326','EPSG:3765',[e.latlng.lng,e.latlng.lat]);
+  var E=Math.round(en[0]), N=Math.round(en[1]);
+  L.popup().setLatLng(e.latlng).setContent(
+    '<div class=coordbox><b>EPSG:3765</b><br>E&nbsp;'+E+'<br>N&nbsp;'+N+
+    '<br>lat/lon '+e.latlng.lat.toFixed(5)+', '+e.latlng.lng.toFixed(5)+
+    '<br><a href="'+edlink(E,N)+'" target="_blank">&rarr; otvori u editoru</a></div>').openOn(map);
+});
+var lg=L.control({position:'topright'});lg.onAdd=function(){var d=L.DomUtil.create('div','panel');
+ d.innerHTML="<h3>Stavka 4 — čvor „Rakovečica” (2.1.1.a)</h3><div class=desc>&#268;vor dobiva ime i to&#269;nog upravitelja. Ljubi&#269;asto = objekt na kojem su promijenjeni atributi; plava linija je os DC 10 samo kao kontekst (mijenja se u stavci 12).</div><div class=cats><div><span class=sw style='background:#1f5fbf'></span>DC 10 — nova os (kontekst) (1)</div><div><span class=sw style='background:#7b3fa0'></span>Planirani čvor „Rakovečica” (IS_1_1 fid 41) (2)</div></div><div class=hint>Gore-lijevo: baza (satelit / OSM) + pali/gasi slojeve.<br>Klik na objekt = detalji i brojke. DESNI klik = koordinate (EPSG:3765) + link u ePlanovi editor.<br>Geometrija pojednostavljena 0,8 m samo radi prikaza; sve brojke su iz to&#269;ne geometrije.</div>";
+ L.DomEvent.disableClickPropagation(d);return d;};lg.addTo(map);
+</script></body></html>

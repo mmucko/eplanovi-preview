@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang=hr><head><meta charset="utf-8">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content=noindex>
+<title>Stavka 13 — 7 IS1 mikro-sliverova prebačeno u poljoprivredu (2.1.1.d)</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.9.2/proj4.js"></script>
+<style>
+ html,body,#map{height:100%;margin:0}
+ .panel{background:rgba(255,255,255,.96);padding:10px 12px;font:13px/1.45 -apple-system,Segoe UI,sans-serif;
+   box-shadow:0 0 8px rgba(0,0,0,.35);max-width:300px;border-radius:5px;max-height:88vh;overflow:auto}
+ .panel h3{margin:0 0 4px;font-size:13.5px}
+ .panel .desc{color:#333;margin:0 0 8px;font-size:11.5px}
+ .panel .cats{border-top:1px solid #ddd;padding-top:6px}
+ .panel .cats div{margin:3px 0;font-size:11.5px}
+ .panel .hint{border-top:1px solid #ddd;margin-top:6px;padding-top:6px;color:#555;font-size:10.5px;font-style:italic}
+ .sw{display:inline-block;width:13px;height:13px;border:1px solid #444;margin-right:6px;vertical-align:middle}
+ .coordbox{font:12px monospace}
+ .leaflet-control-layers{font:12px sans-serif;max-height:80vh;overflow:auto}
+ .leaflet-popup-content{font:13px/1.5 -apple-system,Segoe UI,sans-serif;max-width:390px}
+ .leaflet-popup-content code{font:11.5px Consolas,monospace;background:#eef2f7;padding:1px 4px;border-radius:3px}
+ .bl{display:inline-block;background:#26354f;color:#fff;font-size:10px;font-weight:700;
+   padding:1px 7px;border-radius:9px;letter-spacing:.3px}
+ .lbl{background:transparent;border:none;box-shadow:none;color:#fff;font-weight:bold;
+   font-size:11px;text-shadow:0 0 3px #000,0 0 3px #000,0 0 4px #000,0 0 5px #000}
+</style></head><body><div id="map"></div><script>
+proj4.defs("EPSG:3765","+proj=tmerc +lat_0=0 +lon_0=16.5 +k=0.9999 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs");
+var data={"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[16.331365, 45.887765], [16.330339, 45.887874], [16.329376, 45.888026], [16.328801, 45.888152], [16.3298, 45.887978], [16.330918, 45.887837], [16.331365, 45.887765]]]}, "properties": {"grp": "s", "color": "#f28e2b", "popup": "<b>Stavka 13 · primjedba 2.1.1.d — IS1 mikro-sliver → poljoprivreda</b><br><span class=bl>BLOK 4</span> <code>KN_1_1</code> fid 24 → fid 1 · komad 1/7<br>Površina: <b>430,22 m²</b><br><br><b><code>KN-1-1-1901</code> (IS1, promet <b>državne</b> razine) → <code>KN-1-1-3302</code> (P.o — poljoprivredno, ostalo)</b><br><br>Zavod je tražio korekciju IS1 površina državne razine u karti namjene. To su bile mrvice uz ceste, premale da išta znače kao površina prometne infrastrukture.<br>Uklonjeno <b>7 mikro-ploha, ukupno 1.138,63 m²</b> (8,3 · 65,5 · 69,0 · 85,1 · 211,5 · 269,0 · 430,2 m²).<br>fid 24: 13 → 6 dijelova, 1.960.054,38 → 1.958.915,75 m².<br><br>Nuspojava: time je pao i naslijeđeni gate FAIL „ceste izvan GP-a” iz bloka 3 → <b>gate 29/29</b>.", "tooltip": "IS1 sliver 430,22 m²", "fillOpacity": 0.65, "noFill": false, "weight": 3, "dash": null, "label": "430 m²", "E": 486798, "N": 5083138}}, {"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[16.324746, 45.888714], [16.323801, 45.88883], [16.322406, 45.889032], [16.322226, 45.88907], [16.324746, 45.888714]]]}, "properties": {"grp": "s", "color": "#f28e2b", "popup": "<b>Stavka 13 · primjedba 2.1.1.d — IS1 mikro-sliver → poljoprivreda</b><br><span class=bl>BLOK 4</span> <code>KN_1_1</code> fid 24 → fid 1 · komad 2/7<br>Površina: <b>269,04 m²</b><br><br><b><code>KN-1-1-1901</code> (IS1, promet <b>državne</b> razine) → <code>KN-1-1-3302</code> (P.o — poljoprivredno, ostalo)</b><br><br>Zavod je tražio korekciju IS1 površina državne razine u karti namjene. To su bile mrvice uz ceste, premale da išta znače kao površina prometne infrastrukture.<br>Uklonjeno <b>7 mikro-ploha, ukupno 1.138,63 m²</b> (8,3 · 65,5 · 69,0 · 85,1 · 211,5 · 269,0 · 430,2 m²).<br>fid 24: 13 → 6 dijelova, 1.960.054,38 → 1.958.915,75 m².<br><br>Nuspojava: time je pao i naslijeđeni gate FAIL „ceste izvan GP-a” iz bloka 3 → <b>gate 29/29</b>.", "tooltip": "IS1 sliver 269,04 m²", "fillOpacity": 0.65, "noFill": false, "weight": 3, "dash": null, "label": "269 m²", "E": 486298, "N": 5083243}}, {"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[16.391577, 45.855838], [16.391584, 45.855856], [16.391843, 45.856007], [16.391932, 45.855965], [16.391691, 45.855825], [16.391577, 45.855838]]]}, "properties": {"grp": "s", "color": "#f28e2b", "popup": "<b>Stavka 13 · primjedba 2.1.1.d — IS1 mikro-sliver → poljoprivreda</b><br><span class=bl>BLOK 4</span> <code>KN_1_1</code> fid 24 → fid 1 · komad 3/7<br>Površina: <b>211,46 m²</b><br><br><b><code>KN-1-1-1901</code> (IS1, promet <b>državne</b> razine) → <code>KN-1-1-3302</code> (P.o — poljoprivredno, ostalo)</b><br><br>Zavod je tražio korekciju IS1 površina državne razine u karti namjene. To su bile mrvice uz ceste, premale da išta znače kao površina prometne infrastrukture.<br>Uklonjeno <b>7 mikro-ploha, ukupno 1.138,63 m²</b> (8,3 · 65,5 · 69,0 · 85,1 · 211,5 · 269,0 · 430,2 m²).<br>fid 24: 13 → 6 dijelova, 1.960.054,38 → 1.958.915,75 m².<br><br>Nuspojava: time je pao i naslijeđeni gate FAIL „ceste izvan GP-a” iz bloka 3 → <b>gate 29/29</b>.", "tooltip": "IS1 sliver 211,46 m²", "fillOpacity": 0.65, "noFill": false, "weight": 3, "dash": null, "label": "211 m²", "E": 491594, "N": 5079568}}, {"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[16.351948, 45.883777], [16.35169, 45.883856], [16.350812, 45.884145], [16.35095, 45.884114], [16.351948, 45.883777]]]}, "properties": {"grp": "s", "color": "#f28e2b", "popup": "<b>Stavka 13 · primjedba 2.1.1.d — IS1 mikro-sliver → poljoprivreda</b><br><span class=bl>BLOK 4</span> <code>KN_1_1</code> fid 24 → fid 1 · komad 4/7<br>Površina: <b>85,05 m²</b><br><br><b><code>KN-1-1-1901</code> (IS1, promet <b>državne</b> razine) → <code>KN-1-1-3302</code> (P.o — poljoprivredno, ostalo)</b><br><br>Zavod je tražio korekciju IS1 površina državne razine u karti namjene. To su bile mrvice uz ceste, premale da išta znače kao površina prometne infrastrukture.<br>Uklonjeno <b>7 mikro-ploha, ukupno 1.138,63 m²</b> (8,3 · 65,5 · 69,0 · 85,1 · 211,5 · 269,0 · 430,2 m²).<br>fid 24: 13 → 6 dijelova, 1.960.054,38 → 1.958.915,75 m².<br><br>Nuspojava: time je pao i naslijeđeni gate FAIL „ceste izvan GP-a” iz bloka 3 → <b>gate 29/29</b>.", "tooltip": "IS1 sliver 85,05 m²", "fillOpacity": 0.65, "noFill": false, "weight": 3, "dash": null, "label": "85 m²", "E": 488466, "N": 5082690}}, {"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[16.327012, 45.888396], [16.325564, 45.888596], [16.325415, 45.888619], [16.327012, 45.888396]]]}, "properties": {"grp": "s", "color": "#f28e2b", "popup": "<b>Stavka 13 · primjedba 2.1.1.d — IS1 mikro-sliver → poljoprivreda</b><br><span class=bl>BLOK 4</span> <code>KN_1_1</code> fid 24 → fid 1 · komad 5/7<br>Površina: <b>69,05 m²</b><br><br><b><code>KN-1-1-1901</code> (IS1, promet <b>državne</b> razine) → <code>KN-1-1-3302</code> (P.o — poljoprivredno, ostalo)</b><br><br>Zavod je tražio korekciju IS1 površina državne razine u karti namjene. To su bile mrvice uz ceste, premale da išta znače kao površina prometne infrastrukture.<br>Uklonjeno <b>7 mikro-ploha, ukupno 1.138,63 m²</b> (8,3 · 65,5 · 69,0 · 85,1 · 211,5 · 269,0 · 430,2 m²).<br>fid 24: 13 → 6 dijelova, 1.960.054,38 → 1.958.915,75 m².<br><br>Nuspojava: time je pao i naslijeđeni gate FAIL „ceste izvan GP-a” iz bloka 3 → <b>gate 29/29</b>.", "tooltip": "IS1 sliver 69,05 m²", "fillOpacity": 0.65, "noFill": false, "weight": 3, "dash": null, "label": "69 m²", "E": 486511, "N": 5083200}}, {"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[16.349234, 45.884562], [16.348258, 45.884788], [16.347769, 45.88488], [16.348464, 45.884753], [16.349234, 45.884562]]]}, "properties": {"grp": "s", "color": "#f28e2b", "popup": "<b>Stavka 13 · primjedba 2.1.1.d — IS1 mikro-sliver → poljoprivreda</b><br><span class=bl>BLOK 4</span> <code>KN_1_1</code> fid 24 → fid 1 · komad 6/7<br>Površina: <b>65,47 m²</b><br><br><b><code>KN-1-1-1901</code> (IS1, promet <b>državne</b> razine) → <code>KN-1-1-3302</code> (P.o — poljoprivredno, ostalo)</b><br><br>Zavod je tražio korekciju IS1 površina državne razine u karti namjene. To su bile mrvice uz ceste, premale da išta znače kao površina prometne infrastrukture.<br>Uklonjeno <b>7 mikro-ploha, ukupno 1.138,63 m²</b> (8,3 · 65,5 · 69,0 · 85,1 · 211,5 · 269,0 · 430,2 m²).<br>fid 24: 13 → 6 dijelova, 1.960.054,38 → 1.958.915,75 m².<br><br>Nuspojava: time je pao i naslijeđeni gate FAIL „ceste izvan GP-a” iz bloka 3 → <b>gate 29/29</b>.", "tooltip": "IS1 sliver 65,47 m²", "fillOpacity": 0.65, "noFill": false, "weight": 3, "dash": null, "label": "65 m²", "E": 488245, "N": 5082776}}, {"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[16.328259, 45.888266], [16.328062, 45.888292], [16.328252, 45.888276], [16.328259, 45.888266]]]}, "properties": {"grp": "s", "color": "#f28e2b", "popup": "<b>Stavka 13 · primjedba 2.1.1.d — IS1 mikro-sliver → poljoprivreda</b><br><span class=bl>BLOK 4</span> <code>KN_1_1</code> fid 24 → fid 1 · komad 7/7<br>Površina: <b>8,34 m²</b><br><br><b><code>KN-1-1-1901</code> (IS1, promet <b>državne</b> razine) → <code>KN-1-1-3302</code> (P.o — poljoprivredno, ostalo)</b><br><br>Zavod je tražio korekciju IS1 površina državne razine u karti namjene. To su bile mrvice uz ceste, premale da išta znače kao površina prometne infrastrukture.<br>Uklonjeno <b>7 mikro-ploha, ukupno 1.138,63 m²</b> (8,3 · 65,5 · 69,0 · 85,1 · 211,5 · 269,0 · 430,2 m²).<br>fid 24: 13 → 6 dijelova, 1.960.054,38 → 1.958.915,75 m².<br><br>Nuspojava: time je pao i naslijeđeni gate FAIL „ceste izvan GP-a” iz bloka 3 → <b>gate 29/29</b>.", "tooltip": "IS1 sliver 8,34 m²", "fillOpacity": 0.65, "noFill": false, "weight": 3, "dash": null, "label": "8 m²", "E": 486665, "N": 5083174}}]};
+var c2l=[["s", "IS1 mikro-sliveri → poljoprivreda (7)"]];
+var map=L.map('map',{preferCanvas:true});
+var esri=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+ {maxNativeZoom:18,maxZoom:21,attribution:'Esri World Imagery'}).addTo(map);
+var osm=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+ {maxNativeZoom:19,maxZoom:21,attribution:'OpenStreetMap'});
+var gsat=L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
+ {subdomains:['mt0','mt1','mt2','mt3'],maxNativeZoom:20,maxZoom:21,attribution:'Google'});
+var baseLayers={'Esri satelit':esri,'OSM (karta)':osm,'Google satelit':gsat};
+function edlink(E,N){return 'editor.html?c='+E+'%2C'+N+'&z=16';}
+function st(f){var p=f.properties;var s={color:p.color||'#3388ff',weight:p.weight||3,
+  fillColor:p.color||'#3388ff',fillOpacity:(p.fillOpacity==null?0.35:p.fillOpacity)};
+  if(p.dash) s.dashArray=p.dash; if(p.noFill) s.fill=false; return s;}
+function ptl(f,latlng){return L.circleMarker(latlng,{radius:7,color:'#fff',weight:2,
+  fillColor:f.properties.color||'#000',fillOpacity:.95});}
+function oef(f,l){var p=f.properties;
+  var pop=(p.popup||'')+'<br><span style="color:#666;font-size:11px">('+p.E+', '+p.N+' / EPSG:3765)</span>'+
+    '<br><a href="'+edlink(p.E,p.N)+'" target="_blank">&rarr; otvori u editoru</a>';
+  l.bindPopup(pop,{maxWidth:400});
+  if(p.label){l.bindTooltip(p.label,{permanent:true,direction:'center',className:'lbl'});}
+  else if(p.tooltip){l.bindTooltip(p.tooltip);}}
+var overlays={}, all=[];
+c2l.forEach(function(it){
+  var lyr=L.geoJSON(data,{filter:function(f){return f.properties.grp===it[0];},
+    style:st,pointToLayer:ptl,onEachFeature:oef});
+  if(lyr.getLayers().length){ lyr.addTo(map); overlays[it[1]]=lyr; all.push(lyr); }});
+L.control.layers(baseLayers,overlays,{collapsed:false,position:'topleft'}).addTo(map);
+var grp=L.featureGroup(all);
+function fitAll(){ map.invalidateSize();
+  if(data.features.length){ map.fitBounds(grp.getBounds().pad(0.08)); }
+  else { map.setView([45.88,16.45],13); } }
+fitAll(); setTimeout(fitAll,250); setTimeout(fitAll,900);
+window.addEventListener('resize', function(){ map.invalidateSize(); });
+map.on('contextmenu', function(e){
+  var en=proj4('EPSG:4326','EPSG:3765',[e.latlng.lng,e.latlng.lat]);
+  var E=Math.round(en[0]), N=Math.round(en[1]);
+  L.popup().setLatLng(e.latlng).setContent(
+    '<div class=coordbox><b>EPSG:3765</b><br>E&nbsp;'+E+'<br>N&nbsp;'+N+
+    '<br>lat/lon '+e.latlng.lat.toFixed(5)+', '+e.latlng.lng.toFixed(5)+
+    '<br><a href="'+edlink(E,N)+'" target="_blank">&rarr; otvori u editoru</a></div>').openOn(map);
+});
+var lg=L.control({position:'topright'});lg.onAdd=function(){var d=L.DomUtil.create('div','panel');
+ d.innerHTML="<h3>Stavka 13 — 7 IS1 mikro-sliverova prebačeno u poljoprivredu (2.1.1.d)</h3><div class=desc>Naran&#269;asto = sedam sitnih ploha prometne namjene dr&#382;avne razine, razbacanih uz ceste, koje su prekodirane u poljoprivredno zemlji&#353;te. Zumirajte &#8212; najmanja je 8,3 m&#178;.</div><div class=cats><div><span class=sw style='background:#f28e2b'></span>IS1 mikro-sliveri → poljoprivreda (7)</div></div><div class=hint>Gore-lijevo: baza (satelit / OSM) + pali/gasi slojeve.<br>Klik na objekt = detalji i brojke. DESNI klik = koordinate (EPSG:3765) + link u ePlanovi editor.<br>Geometrija pojednostavljena 0,8 m samo radi prikaza; sve brojke su iz to&#269;ne geometrije.</div>";
+ L.DomEvent.disableClickPropagation(d);return d;};lg.addTo(map);
+</script></body></html>

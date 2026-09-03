@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang=hr><head><meta charset="utf-8">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content=noindex>
+<title>Stavka 17 — EK uređaj premješten na k.č. 286/12 (2.2.1.a)</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.9.2/proj4.js"></script>
+<style>
+ html,body,#map{height:100%;margin:0}
+ .panel{background:rgba(255,255,255,.96);padding:10px 12px;font:13px/1.45 -apple-system,Segoe UI,sans-serif;
+   box-shadow:0 0 8px rgba(0,0,0,.35);max-width:300px;border-radius:5px;max-height:88vh;overflow:auto}
+ .panel h3{margin:0 0 4px;font-size:13.5px}
+ .panel .desc{color:#333;margin:0 0 8px;font-size:11.5px}
+ .panel .cats{border-top:1px solid #ddd;padding-top:6px}
+ .panel .cats div{margin:3px 0;font-size:11.5px}
+ .panel .hint{border-top:1px solid #ddd;margin-top:6px;padding-top:6px;color:#555;font-size:10.5px;font-style:italic}
+ .sw{display:inline-block;width:13px;height:13px;border:1px solid #444;margin-right:6px;vertical-align:middle}
+ .coordbox{font:12px monospace}
+ .leaflet-control-layers{font:12px sans-serif;max-height:80vh;overflow:auto}
+ .leaflet-popup-content{font:13px/1.5 -apple-system,Segoe UI,sans-serif;max-width:390px}
+ .leaflet-popup-content code{font:11.5px Consolas,monospace;background:#eef2f7;padding:1px 4px;border-radius:3px}
+ .bl{display:inline-block;background:#26354f;color:#fff;font-size:10px;font-weight:700;
+   padding:1px 7px;border-radius:9px;letter-spacing:.3px}
+ .lbl{background:transparent;border:none;box-shadow:none;color:#fff;font-weight:bold;
+   font-size:11px;text-shadow:0 0 3px #000,0 0 3px #000,0 0 4px #000,0 0 5px #000}
+</style></head><body><div id="map"></div><script>
+proj4.defs("EPSG:3765","+proj=tmerc +lat_0=0 +lon_0=16.5 +k=0.9999 +x_0=500000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs");
+var data={"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[16.313763, 45.900368], [16.313753, 45.900267], [16.313701, 45.900119], [16.313606, 45.899982], [16.313472, 45.899862], [16.313305, 45.899764], [16.313113, 45.899693], [16.312904, 45.89965], [16.312759, 45.899639], [16.312542, 45.89965], [16.312332, 45.899691], [16.31214, 45.899762], [16.312025, 45.899825], [16.311879, 45.899937], [16.311769, 45.900069], [16.311701, 45.900214], [16.311678, 45.900365], [16.311688, 45.900466], [16.31174, 45.900614], [16.311835, 45.900751], [16.311969, 45.900871], [16.312135, 45.900969], [16.312328, 45.901041], [16.312466, 45.901072], [16.312682, 45.901094], [16.312899, 45.901084], [16.313109, 45.901042], [16.313301, 45.900971], [16.313469, 45.900873], [16.313603, 45.900754], [16.313699, 45.900617], [16.313752, 45.90047], [16.313763, 45.900368]]]}, "properties": {"grp": "stara", "color": "#8f8f8f", "popup": "<b>Stavka 17 · primjedba 2.2.1.a — STARA pozicija EK uređaja</b><br><span class=bl>BLOK 7</span> <code>IS_2_2</code> fid 2 · id <code>bzRBpxu6xw9t9dezdjoKkC</code><br>Zona <b>20.536,64 m²</b>, radijus <b>80,85 m</b>, centar E <b>485.468,14</b> · N <b>5.084.520,20</b>.<br><br>Čestica k.č. 286/12 bila je <b>0 % unutar</b> ove zone — dakle potpuno izvan nje, na 127,93 m od centra.", "tooltip": "stara pozicija zone R2", "fillOpacity": 0, "noFill": true, "weight": 3, "dash": "10,6", "label": "stara pozicija", "E": 485468, "N": 5084523}}, {"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[16.312145, 45.900147], [16.312135, 45.900045], [16.312083, 45.899898], [16.311988, 45.899761], [16.311854, 45.899641], [16.311688, 45.899543], [16.311495, 45.899471], [16.311286, 45.899429], [16.311141, 45.899418], [16.310924, 45.899428], [16.310714, 45.89947], [16.310522, 45.899541], [16.310407, 45.899603], [16.310261, 45.899716], [16.310151, 45.899847], [16.310084, 45.899992], [16.31006, 45.900143], [16.31007, 45.900245], [16.310122, 45.900392], [16.310217, 45.900529], [16.310351, 45.900649], [16.310518, 45.900747], [16.31071, 45.900819], [16.310848, 45.900851], [16.311064, 45.900872], [16.311281, 45.900862], [16.311491, 45.90082], [16.311683, 45.900749], [16.311851, 45.900652], [16.311985, 45.900532], [16.312081, 45.900395], [16.312135, 45.900248], [16.312145, 45.900147]]]}, "properties": {"grp": "nova", "color": "#1f5fbf", "popup": "<b>Stavka 17 · primjedba 2.2.1.a — NOVA pozicija EK uređaja</b><br><span class=bl>BLOK 7</span> <code>IS_2_2</code> fid 2, kod <code>IS-2-2-1101</code> („RADIONAVIGACIJSKI UREĐAJ”)<br>Zona <b>20.536,64 m²</b>, radijus <b>80,85 m</b>, centar E <b>485.342,55</b> · N <b>5.084.495,86</b>.<br><br><b>Čista translacija</b> za <b>(-125,59, -24,34) m</b>, duljina <b>127,93 m</b>:<br>• površina prije = površina poslije = 20.536,64 m² (delta <b>0,000000 m²</b>)<br>• oblik očuvan — svih <b>92 vrha identična</b> relativno na centroid<br>• svih <b>12 atributnih kolona bit-za-bit identično</b> (ništa osim položaja)<br><br>Rezultat: k.č. 286/12 sada je <b>100 % unutar</b> zone, a centar zone poklapa se s centroidom čestice na <b>0,00 m</b>.", "tooltip": "nova pozicija zone R2", "fillOpacity": 0.2, "noFill": false, "weight": 4, "dash": null, "label": "nova pozicija", "E": 485343, "N": 5084499}}, {"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[16.310994, 45.900008], [16.311177, 45.899999], [16.311209, 45.900283], [16.311031, 45.900293], [16.310994, 45.900008]]]}, "properties": {"grp": "cest", "color": "#ffd166", "popup": "<b>k.č. 286/12, k.o. Samoborec (333212)</b><br>Površina: <b>444,07 m²</b>, centroid E <b>485.342,55</b> · N <b>5.084.495,86</b>.<br>Izvor: DKP s javnog WFS-a DGU-a, <code>katastarske_cestice_333212_SAMOBOREC.geojson</code>.<br><br>Zavod: EK uređaj treba premjestiti na ovu česticu, jer se ondje stvarno nalazi.<br>Prije zahvata: <b>0 %</b> čestice unutar zone. Poslije: <b>100 %</b>.", "tooltip": "k.č. 286/12 — 444,07 m²", "fillOpacity": 0.55, "noFill": false, "weight": 3, "dash": null, "label": "k.č. 286/12", "E": 485342, "N": 5084491}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[16.31272, 45.900367], [16.311103, 45.900145]]}, "properties": {"grp": "vek", "color": "#e6194b", "popup": "<b>Vektor translacije: (-125,59, -24,34) m · duljina 127,93 m</b><br><br><b>Kako je dokazano da je premješten pravi uređaj.</b> U planu postoje <b>dva</b> radionavigacijska uređaja (fid 1 = R1 i fid 2 = R2), a Zavod je priložio samo sliku bez koordinata. Mjerilo slike izvedeno je <b>iz radijusa nacrtanog kruga</b> (80,85 m = 230 px → 0,3516 m/px), pa su izmjereni udaljenost i azimut od uređaja do čestice: <b>~109 m, azimut 96°</b>.<br><br>• <b>R2 (fid 2):</b> 127,9 m, azimut 79° → odstupanje <b>+17 % i −17°</b> ✓<br>• <b>R1 (fid 1):</b> 604,1 m, azimut 214° → odstupanje <b>+454 % i +118°</b> ✗<br><br>R2 odgovara u <b>oba neovisna kriterija</b>, R1 promašuje oba. Tri neovisne procjene centra kruga daju 111,5 / 109,1 / ~123 m i azimut 90–96° — <b>sve tri vode na R2</b>.", "tooltip": "translacija 127,93 m", "fillOpacity": 0.4, "noFill": false, "weight": 5, "dash": null, "label": "−125,59 / −24,34 m", "E": 485468, "N": 5084520}}, {"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[16.307853, 45.895612], [16.307831, 45.89546], [16.307764, 45.895315], [16.307656, 45.895184], [16.307563, 45.895106], [16.307396, 45.895007], [16.30727, 45.894957], [16.307066, 45.894904], [16.30685, 45.894883], [16.306633, 45.894893], [16.306423, 45.894934], [16.30623, 45.895006], [16.306115, 45.895068], [16.305969, 45.895181], [16.30586, 45.895312], [16.305792, 45.895457], [16.305769, 45.895608], [16.305791, 45.895759], [16.305858, 45.895904], [16.305966, 45.896036], [16.306059, 45.896114], [16.306226, 45.896212], [16.306352, 45.896263], [16.306556, 45.896316], [16.306772, 45.896337], [16.30699, 45.896327], [16.307131, 45.896303], [16.30733, 45.896241], [16.307507, 45.896152], [16.307653, 45.896039], [16.307762, 45.895907], [16.30783, 45.895763], [16.307853, 45.895612]]]}, "properties": {"grp": "r1", "color": "#7b3fa0", "popup": "<b>Uređaj R1 — <code>IS_2_2</code> fid 1, netaknut</b><br>id <code>7tCZza3RV7PJmtgsv2YWRH</code>, isti kod <code>IS-2-2-1101</code>.<br>Ostao je <b>bit-za-bit netaknut</b>. Njegova udaljenost do k.č. 286/12 je <b>604,1 m</b> uz azimut 214° (jugozapad) — ne odgovara Zavodovoj slici.<br><br><b>Otvoreno:</b> ako Zavodova primjedba implicira da je i R1 krivo pozicioniran, za to treba zasebna slika ili podloga.", "tooltip": "R1 (fid 1) — netaknut", "fillOpacity": 0.1, "noFill": false, "weight": 2, "dash": "6,4", "label": "R1 (netaknut)", "E": 485008, "N": 5083995}}]};
+var c2l=[["stara", "STARA pozicija zone R2 (blok 6) (1)"], ["nova", "NOVA pozicija zone R2 (blok 7) (1)"], ["cest", "k.č. 286/12, k.o. Samoborec (1)"], ["vek", "Vektor translacije (1)"], ["r1", "Uređaj R1 (IS_2_2 fid 1) — netaknut (1)"]];
+var map=L.map('map',{preferCanvas:true});
+var esri=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+ {maxNativeZoom:18,maxZoom:21,attribution:'Esri World Imagery'}).addTo(map);
+var osm=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+ {maxNativeZoom:19,maxZoom:21,attribution:'OpenStreetMap'});
+var gsat=L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
+ {subdomains:['mt0','mt1','mt2','mt3'],maxNativeZoom:20,maxZoom:21,attribution:'Google'});
+var baseLayers={'Esri satelit':esri,'OSM (karta)':osm,'Google satelit':gsat};
+function edlink(E,N){return 'editor.html?c='+E+'%2C'+N+'&z=16';}
+function st(f){var p=f.properties;var s={color:p.color||'#3388ff',weight:p.weight||3,
+  fillColor:p.color||'#3388ff',fillOpacity:(p.fillOpacity==null?0.35:p.fillOpacity)};
+  if(p.dash) s.dashArray=p.dash; if(p.noFill) s.fill=false; return s;}
+function ptl(f,latlng){return L.circleMarker(latlng,{radius:7,color:'#fff',weight:2,
+  fillColor:f.properties.color||'#000',fillOpacity:.95});}
+function oef(f,l){var p=f.properties;
+  var pop=(p.popup||'')+'<br><span style="color:#666;font-size:11px">('+p.E+', '+p.N+' / EPSG:3765)</span>'+
+    '<br><a href="'+edlink(p.E,p.N)+'" target="_blank">&rarr; otvori u editoru</a>';
+  l.bindPopup(pop,{maxWidth:400});
+  if(p.label){l.bindTooltip(p.label,{permanent:true,direction:'center',className:'lbl'});}
+  else if(p.tooltip){l.bindTooltip(p.tooltip);}}
+var overlays={}, all=[];
+c2l.forEach(function(it){
+  var lyr=L.geoJSON(data,{filter:function(f){return f.properties.grp===it[0];},
+    style:st,pointToLayer:ptl,onEachFeature:oef});
+  if(lyr.getLayers().length){ lyr.addTo(map); overlays[it[1]]=lyr; all.push(lyr); }});
+L.control.layers(baseLayers,overlays,{collapsed:false,position:'topleft'}).addTo(map);
+var grp=L.featureGroup(all);
+function fitAll(){ map.invalidateSize();
+  if(data.features.length){ map.fitBounds(grp.getBounds().pad(0.08)); }
+  else { map.setView([45.88,16.45],13); } }
+fitAll(); setTimeout(fitAll,250); setTimeout(fitAll,900);
+window.addEventListener('resize', function(){ map.invalidateSize(); });
+map.on('contextmenu', function(e){
+  var en=proj4('EPSG:4326','EPSG:3765',[e.latlng.lng,e.latlng.lat]);
+  var E=Math.round(en[0]), N=Math.round(en[1]);
+  L.popup().setLatLng(e.latlng).setContent(
+    '<div class=coordbox><b>EPSG:3765</b><br>E&nbsp;'+E+'<br>N&nbsp;'+N+
+    '<br>lat/lon '+e.latlng.lat.toFixed(5)+', '+e.latlng.lng.toFixed(5)+
+    '<br><a href="'+edlink(E,N)+'" target="_blank">&rarr; otvori u editoru</a></div>').openOn(map);
+});
+var lg=L.control({position:'topright'});lg.onAdd=function(){var d=L.DomUtil.create('div','panel');
+ d.innerHTML="<h3>Stavka 17 — EK uređaj premješten na k.č. 286/12 (2.2.1.a)</h3><div class=desc>Siva crtkana = stara pozicija zone ure&#273;aja, plava puna = nova. &#381;uto = k.&#269;. 286/12 na kojoj se ure&#273;aj stvarno nalazi. Crvena crta = vektor pomaka. Ljubi&#269;asto crtkano = drugi ure&#273;aj R1, koji je ostao netaknut.</div><div class=cats><div><span class=sw style='background:#8f8f8f'></span>STARA pozicija zone R2 (blok 6) (1)</div><div><span class=sw style='background:#1f5fbf'></span>NOVA pozicija zone R2 (blok 7) (1)</div><div><span class=sw style='background:#ffd166'></span>k.č. 286/12, k.o. Samoborec (1)</div><div><span class=sw style='background:#e6194b'></span>Vektor translacije (1)</div><div><span class=sw style='background:#7b3fa0'></span>Uređaj R1 (IS_2_2 fid 1) — netaknut (1)</div></div><div class=hint>Gore-lijevo: baza (satelit / OSM) + pali/gasi slojeve.<br>Klik na objekt = detalji i brojke. DESNI klik = koordinate (EPSG:3765) + link u ePlanovi editor.<br>Geometrija pojednostavljena 0,4 m samo radi prikaza; sve brojke su iz to&#269;ne geometrije.</div>";
+ L.DomEvent.disableClickPropagation(d);return d;};lg.addTo(map);
+</script></body></html>
