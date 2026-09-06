@@ -38,14 +38,22 @@ function mk(fc,dash){return L.geoJSON(fc,{
   onEachFeature:function(f,l){var p=f.properties;
     l.bindPopup(p.pop+'<br>('+p.E+', '+p.N+' / 3765)<br><a href="'+edlink(p.E,p.N)+'" target="_blank">→ otvori u editoru</a>',{maxWidth:380});
     l.bindTooltip(p.t);}});}
-var before=mk(D.before), after=mk(D.after), beforeDash=mk(D.before,'6,6');
-var grp=L.featureGroup([after]).addTo(map);
+// PO PROMJENI: svaka tocka = svoja grupa (checkbox), sadrzaj ovisi o modu
+function sub(fc,t){return {type:'FeatureCollection',
+  features:fc.features.filter(function(f){return f.properties.t===t;})};}
+var areas=D.legend.map(function(r){return {t:r.t,
+  before:mk(sub(D.before,r.t)), after:mk(sub(D.after,r.t)), beforeDash:mk(sub(D.before,r.t),'6,6'),
+  grp:L.layerGroup()};});
+var overlays={};
+areas.forEach(function(a){overlays[a.t]=a.grp; a.grp.addTo(map);});
+L.control.layers(null,overlays,{collapsed:false,position:'topleft'}).addTo(map);
 map.fitBounds(L.featureGroup([mk(D.after)]).getBounds().pad(0.1));
-function setMode(m){
-  [before,after,beforeDash].forEach(function(l){if(map.hasLayer(l))map.removeLayer(l);});
-  if(m==='pr'){before.addTo(map);}
-  if(m==='po'){after.addTo(map);}
-  if(m==='ob'){after.addTo(map);beforeDash.addTo(map);}
+var MODE='po';
+function fill(){areas.forEach(function(a){a.grp.clearLayers();
+  if(MODE==='pr'){a.grp.addLayer(a.before);}
+  else if(MODE==='po'){a.grp.addLayer(a.after);}
+  else {a.grp.addLayer(a.after);a.grp.addLayer(a.beforeDash);}});}
+function setMode(m){MODE=m;fill();
   ['bPr','bPo','bOb'].forEach(function(id){document.getElementById(id).className='';});
   document.getElementById(m==='pr'?'bPr':m==='po'?'bPo':'bOb').className='on';
   document.getElementById('modeDesc').innerHTML = m==='pr'
@@ -69,7 +77,7 @@ lg.onAdd=function(){var d=L.DomUtil.create('div','panel');
  d.innerHTML='<h3>Što je promijenjeno — PRIJE / POSLIJE</h3>'+
    '<div id="modeDesc">Prikazano: <b>NOVO stanje</b> (uploadani kandidat).</div>'+
    '<div class=leg>'+rows+'</div>'+
-   '<div class=hint>Gumbi gore: prebaci staro/novo stanje.<br>Klik na plohu = objašnjenje + editor link.<br>Desni klik = koordinate.</div>';
+   '<div class=hint>Gumbi gore: prebaci staro/novo stanje.<br>GORE-LIJEVO: kvačice — pali/gasi svaku promjenu zasebno.<br>Klik na plohu = objašnjenje + editor link.<br>Desni klik = koordinate.</div>';
  L.DomEvent.disableClickPropagation(d);return d;};
 lg.addTo(map);
 setMode('po');
