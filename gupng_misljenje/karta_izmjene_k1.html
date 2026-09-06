@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head><meta charset="utf-8">
-<title>KARTA IZMJENA — kandidat 1 (20260822_121558_runda2_k1.gpkg)</title>
+<title>KARTA IZMJENA — kandidat 1 (20260906_211640_runda2_k2.gpkg)</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.9.2/proj4.js"></script>
@@ -70,7 +70,7 @@ map.on('contextmenu', function(e){
 });
 // JAKA legenda
 var lg=L.control({position:'topright'});lg.onAdd=function(){var d=L.DomUtil.create('div','panel');
- d.innerHTML='<h3>KARTA IZMJENA — kandidat 1 (20260822_121558_runda2_k1.gpkg)</h3><div class=desc>Sve geometrijske izmjene kandidata 1 vs baseline, tagirane na točke mišljenja. Gates: 22/22 PASS (G1 blast-radius, G2 delta-topologija, G3 format/renderer).</div>'+
+ d.innerHTML='<h3>KARTA IZMJENA — kandidat 1 (20260906_211640_runda2_k2.gpkg)</h3><div class=desc>Sve geometrijske izmjene kandidata 1 vs baseline, tagirane na točke mišljenja. Gates: 22/22 PASS (G1 blast-radius, G2 delta-topologija, G3 format/renderer).</div>'+
    '<div class=cats><div style="margin:2px 0"><span style="display:inline-block;width:13px;height:13px;background:#e3170a;border:1px solid #444;margin-right:6px;vertical-align:middle"></span><b>1b: izdvojeno GP (novo)</b> — 64.7 ha</div><div style="margin:2px 0"><span style="display:inline-block;width:13px;height:13px;background:#22aa44;border:1px solid #444;margin-right:6px;vertical-align:middle"></span><b>2a: Gr prošireno</b> — 0.7 ha</div><div style="margin:2px 0"><span style="display:inline-block;width:13px;height:13px;background:#d81b60;border:1px solid #444;margin-right:6px;vertical-align:middle"></span><b>2b: P3 poljoprivredno (novo, van GP)</b> — 9.6 ha</div><div style="margin:2px 0"><span style="display:inline-block;width:13px;height:13px;background:#1e90ff;border:1px solid #444;margin-right:6px;vertical-align:middle"></span><b>3-1: pravilo Višestambena (novo)</b> — 13.3 ha</div><div style="margin:2px 0"><span style="display:inline-block;width:13px;height:13px;background:#00897b;border:1px solid #444;margin-right:6px;vertical-align:middle"></span><b>3-1: pravilo Mješovita gradnja (novo)</b> — 52.3 ha</div></div>'+
    '<div class=hint>Gore-lijevo: pali/gasi kategorije.<br>Klik na plohu = detalji + editor.<br>DESNI klik bilo gdje = koordinate (3765) + editor.</div>';
  L.DomEvent.disableClickPropagation(d);return d;};lg.addTo(map);
